@@ -1,0 +1,89 @@
+{% if messg %}
+<!--
+This message comes from context
+-->
+<script>
+  /* This alert will operate when
+  signin email or password is incorrect
+  */
+       alert('{{ messg }}');
+</script>
+{% endif %}
+<!--
+end if
+-->
+<!--
+load all static files
+-->
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!--
+Add static css
+-->
+  <link rel="stylesheet" href="{% static 'signin.css' %}">
+  <!--
+Font awesome library add
+-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!--bootstrap libraries are added -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<title>LogIn</title>
+</head>
+<body>
+<div class="gap">
+  <!--navbar of signin page -->
+  <div class="container">
+    <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+    <ul class="navbar-nav">
+      <!--list of links  -->
+      <li class="nav-item active">
+        <a class="nav-link disabled" href="#">Signin</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"  href="{% url 'home' %}">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"  href="{% url 'adminsignup' %}">Administration</a>
+      </li>
+
+    </ul>
+  </nav>
+  <!--end navbar -->
+  <div class="space">
+      <h1>Signin</h1>
+  </div>
+  <!--
+Form for SignIn
+  -->
+  <form action="/postsign/" method="post">
+      {% csrf_token %}
+      <!--
+      CSRF tokens can prevent CSRF attacks by making it impossible for an attacker
+      to construct a fully valid HTTP request suitable for feeding to a victim user.
+      Since the attacker cannot determine or predict the value of a user's CSRF token, they cannot
+      construct a request with all the parameters that are necessary for the application to honor the request.
+    -->
+    <label for="fname">Email</label>
+    <input type="text" id="fname" name="email" placeholder="Your email..">
+
+    <label for="lname">Password</label>
+    <input type="text" id="fname" name="pass">
+    <input type="submit" name="SignIn">
+    <!--
+  signup button
+  -->
+    <button type="button" class="block" onclick="location.href='{% url 'signup' %}'">SignUp</button>
+  </form>
+</div>
+</div>
+
+</body>
+</html>

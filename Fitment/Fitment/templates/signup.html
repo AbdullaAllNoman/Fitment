@@ -1,0 +1,93 @@
+{% if messg %}
+<!--
+This message comes from context
+-->
+<script>
+  /* This alert will operate when
+  signup has occured any error
+  */
+       alert('{{ messg }}');
+</script>
+{% endif %}
+<!--
+end if
+-->
+<!--
+load all static files
+-->
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!--
+Add static css
+-->
+  <link rel="stylesheet" href="{% static 'signup.css' %}">
+  <!--
+Font awesome library add
+-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--bootstrap libraries are added -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<title>SignUp Form</title>
+</head>
+
+<body>
+  <div class="container">
+    <!--
+  Form for SignUp
+    -->
+  <form action="/postsignup/" method="post">
+    <!--
+    CSRF tokens can prevent CSRF attacks by making it impossible for an attacker
+    to construct a fully valid HTTP request suitable for feeding to a victim user.
+    Since the attacker cannot determine or predict the value of a user's CSRF token, they cannot
+    construct a request with all the parameters that are necessary for the application to honor the request.
+  -->
+    {% csrf_token %}
+  <div class="container">
+    <h1>Register</h1>
+    <p>Please fill in this form to create an account.</p>
+    <hr>
+    <!--
+  All fields for Signup
+    -->
+    <label for="fname"><b>Full Name</b></label>
+    <input type="text" placeholder="Enter your full name" name="fname" required>
+    <label for="phone"><b>Phone Number</b></label>
+    <input type="text" placeholder="Phone number" name="phone">
+    <label for="adress"><b>Address</b></label>
+    <input type="text" placeholder="Phone number" name="adress">
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="pass" required>
+
+    <label for="psw-repeat"><b>Repeat Password</b></label>
+    <input type="password" placeholder="Repeat Password" name="pass-repeat">
+    <hr>
+    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+
+      <input type="submit" name="SignUp">
+  </div>
+
+  <div class="container signin">
+    <!--
+  If already signup then
+  signin by this href
+    -->
+    <p>Already have an account? <a href="{% url 'signin' %}">Sign in</a>.</p>
+  </div>
+</form>
+</div>
+</body>
+
+</html>

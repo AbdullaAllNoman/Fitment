@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "200152667905",
+    "firebase_url": "https://fitment-c1432.firebaseio.com",
+    "project_id": "fitment-c1432",
+    "storage_bucket": "fitment-c1432.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:200152667905:android:38a2566fa435b146872d00",
+        "android_client_info": {
+          "package_name": "com.example.fitment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "200152667905-kdrpkogs07cltbcr96nh1v056b8g2rdj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fitment",
+            "certificate_hash": "ac70c4c12b0477b39e5dc2cde45ffb7d07237e0e"
+          }
+        },
+        {
+          "client_id": "200152667905-pkm7j2tjbkc36ahh3ng3977cghe3jq31.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2tVKWT6yChU9vod3tUeHRH9MMh9UKE2w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "200152667905-pkm7j2tjbkc36ahh3ng3977cghe3jq31.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

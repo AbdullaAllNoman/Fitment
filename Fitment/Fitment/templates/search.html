@@ -1,0 +1,91 @@
+<!--
+extend html from navbar
+-->
+{% extends "navbar.html" %}
+<!--
+All extends html file will be shown
+in this portion of html page.
+Navbar will be shown here
+-->
+{% block content %}
+<style>
+  /* css add here to design
+  the product card
+  */
+  /* card design
+  */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+/* price coloumn design
+*/
+.price {
+  color: grey;
+  font-size: 22px;
+}
+/* card button style
+*/
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+/* select pattern when
+card button will hover
+*/
+.card button:hover {
+  opacity: 0.7;
+}
+</style>
+<h2 style="text-align:center">Product Card</h2>
+<!--
+Product start here
+-->
+<div class="row">
+ <div class="col-md-4">
+ <div class="card">
+   <!--
+  product iamge
+   -->
+  <img src="{{prod.val.image}}" alt="productimages" style="width:50%;text-align:center">
+  <!--
+All details of product
+  -->
+  <h3>{{prod.val.pname}}</h3>
+  <p class="price">{{prod.val.price}}</p>
+  <p class="price">{{prod.val.descrition}}</p>
+  <p class="price">{{prod.val.time}}</p>
+
+  <!--
+  Form for adding product to
+  Cart list.
+  -->
+<form  method="post" action='{% url 'detail' prod.val.pname %}'>
+  <!--
+  CSRF tokens can prevent CSRF attacks by making it impossible for an attacker
+  to construct a fully valid HTTP request suitable for feeding to a victim user.
+  Since the attacker cannot determine or predict the value of a user's CSRF token, they cannot
+  construct a request with all the parameters that are necessary for the application to honor the request.
+-->
+  {% csrf_token %}
+ <input type="submit" name="cart" value="Add To Cart">
+</form>
+
+ </div>
+</div>
+
+</div>
+<!--
+end body block
+-->
+{% endblock %}

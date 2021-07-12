@@ -1,0 +1,78 @@
+<!--
+extend html from navbar
+-->
+{% extends "navbar.html" %}
+<!--
+All extends html file will be shown
+in this portion of html page.
+Navbar will be shown here
+-->
+{% block content %}
+<!--
+Details of Products
+-->
+<div class="container-fluid padding" id="detailpad">
+  <div class="row padding">
+      <div class="col-lg-6" id="gap">
+        <!--
+      Image of Product
+        -->
+        <img src="{{prod.val.image}}" class="img-thumbnail" style="width:80%;text-align:center">
+      </div>
+      <!--
+    Full description of product
+      -->
+      <div class="container col-md-12 col-lg-6" id="pad">
+
+          <h3>{{prod.val.pname2}}</h3>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <p><b>Category: </b>{{prod.val.category}}</p>
+          <p class="price">Price: {{prod.val.price}} <i class="fa fa-money"></i></p>
+          <p><b>Description: </b>{{prod.val.description}}</p>
+          <p class="price"><b>Date: </b>{{prod.val.time}}</p>
+
+          <!--
+      Form for adding product to
+      Cart list.
+          -->
+        <form  method="post" action='{% url 'detail' prod.val.pname %}'>
+          <!--
+          CSRF tokens can prevent CSRF attacks by making it impossible for an attacker
+          to construct a fully valid HTTP request suitable for feeding to a victim user.
+          Since the attacker cannot determine or predict the value of a user's CSRF token, they cannot
+          construct a request with all the parameters that are necessary for the application to honor the request.
+        -->
+          {% csrf_token %}
+          <div class="slidecontainer">
+            <!--
+            Add Product with quantity
+          -->
+          <input type="range" min="1" max="100" class="slider" name="quantity" value="1" id="myRange">
+          <p><b>Quantity: </b><span id="demo"></span></p>
+        </div>
+
+          <input type="submit" name="cart" value="Add To Cart">
+        </form>
+      </div>
+  </div>
+</div>
+
+<!--
+Javascript to make
+the range button responsive
+-->
+
+<script>
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value;
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
+</script>
+
+{% endblock %}

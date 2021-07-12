@@ -1,0 +1,93 @@
+<!--
+Load all static files
+-->
+{% load static from staticfiles %}
+<!doctype html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!--
+  load all static css files
+  -->
+  <link rel="stylesheet" href="{% static 'vieworder.css' %}">
+  <!--
+  Font awesome library add
+  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!--
+  Bootstrap library add
+  -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <title>Order</title>
+</head>
+<body>
+
+
+  <div class="container" id="pro">
+    <!--
+    Navbar for admin area
+    -->
+    <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+    <ul class="navbar-nav">
+      <!--
+      list of all links
+      -->
+      <li class="nav-item active">
+        <a class="nav-link disabled" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"  href="{% url 'vieworder' %}">Order</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"  href="{% url 'productsform' %}">Upload Product</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"  href="{% url 'log' %}">SignOut</a>
+      </li>
+    </ul>
+  </nav>
+    <h1>Order List</h1>
+    <hr class="new4">
+  </div>
+
+  <div class="container">
+    <!--
+    Table to see all
+    the orders that were made
+    -->
+  <table>
+    <tr>
+      <th id="tb">Name</th>
+      <th id="tb">Phone</th>
+      <th id="tb">Address</th>
+      <th id="tb">Price</th>
+    </tr>
+    <!--
+    Order has all the order objects
+    -->
+    <!--
+    Start loop
+    -->
+    {% for pro in order %}
+    <tr>
+      <!--
+    Orders information
+      -->
+      <td>{{pro.val.name}}</td>
+      <td>{{pro.val.phone}}</td>
+      <td>{{pro.val.address}}</td>
+      <td>{{pro.val.totalAmount}}</td>
+    </tr>
+    {% endfor %}
+    <!--
+    end for loop
+    -->
+    </table>
+    </div>
+</body>
+</html>

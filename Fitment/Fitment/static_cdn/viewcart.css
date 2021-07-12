@@ -1,0 +1,39 @@
+/* Set a style for table font  */
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+/* Set a style for table data */
+td{
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+/* Set a style for table row child */
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+/* Set a style for table heading */
+th {
+  border: 1px solid lightblue;
+  text-align: left;
+  padding: 8px;
+}
+/* Set a style for block class */
+.block {
+  display: block;
+  width: 100%;
+  border: none;
+  background-color: lightblue;
+  color: white;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+/* Set a style block is hover */
+.block:hover {
+  background-color: #ddd;
+  color: black;
+}

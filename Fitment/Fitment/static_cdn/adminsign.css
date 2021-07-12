@@ -1,0 +1,48 @@
+/* Set a style for the body,select font family */
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+/* Set a style for input container */
+.input-container {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+/* Set a style for the  icon */
+.icon {
+  padding: 10px;
+  background: dodgerblue;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+/* padding and make the width
+100% for input field */
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
+/* Set a style when the input field is focused */
+.input-field:focus {
+  border: 2px solid dodgerblue;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: dodgerblue;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+/* Set a style when button is hover */
+.btn:hover {
+  opacity: 1;
+}
+/* Set a style padding the div */
+#gap{
+  padding-top: 150px;
+}

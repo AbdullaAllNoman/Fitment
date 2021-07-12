@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/a2"
+    tools:context=".LoggedIn">
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="114dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="142dp"
+        android:layout_marginTop="442dp"
+        android:layout_marginEnd="142dp"
+        android:background="#F0EAEA"
+        android:backgroundTint="#3C3F41"
+        android:drawableLeft="@drawable/googleg_standard_color_18"
+        android:fontFamily="@font/actor"
+        android:foregroundTint="#00000000"
+        android:foregroundTintMode="src_atop"
+        android:paddingLeft="10sp"
+        android:paddingRight="0sp"
+        android:text=" Sign out"
+        android:textAllCaps="false"
+        android:textColor="#D00E0C0C"
+        android:textSize="13dp"
+        android:textStyle="normal|bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

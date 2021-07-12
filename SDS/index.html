@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <title>SDS</title>
+
+  <!-- Adding Css File -->
+  <link href="css/navbar.css" rel="stylesheet">
+  <link href="css/index.css" rel="stylesheet">
+
+</head>
+
+<body>
+	<!-- Side Navbar -->
+  <div id="mySidenav" class="sidenav">
+    <button  onclick="printDoc()">Print this page</button>
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"></a>
+    <a onCLick="scrollToElement('introduction')" href="javascript:void(0)">1.Introduction</a>
+    
+    <a onCLick="scrollToElement('documentConventions')" href="javascript:void(0)">2. Document Conventions</a>
+     
+
+    <a onCLick="scrollToElement('designComponents')" href="javascript:void(0)">3.Description of Design Components</a>
+      
+
+    <a onCLick="scrollToElement('highlevel')" href="javascript:void(0)">4.High-Level Component Design</a>
+     
+
+    <a onCLick="scrollToElement('classdiagram')" href="javascript:void(0)">5. Class diagrams</a>
+      <b onCLick="scrollToElement('userec')" href="javascript:void(0)">5.1	User </b>
+	  <b onCLick="scrollToElement('admin')" href="javascript:void(0)">5.2 Admin</b>
+	  <b onCLick="scrollToElement('buyer')" href="javascript:void(0)">5.3 Buyer</b>
+	  <b onCLick="scrollToElement('review')" href="javascript:void(0)">5.4	Review</b>
+      <b onCLick="scrollToElement('interactions')" href="javascript:void(0)">5.5	Interactions</b>
+      <b onCLick="scrollToElement('item')" href="javascript:void(0)">5.6 Item</b>
+
+      <b onCLick="scrollToElement('ordereditem')" href="javascript:void(0)">5.7 Ordered Item</b>
+
+    <a onCLick="scrollToElement('databasedesign')" href="javascript:void(0)">6. Database Design</a>
+    <b onCLick="scrollToElement('erdiagram')" href="javascript:void(0)">6.1.ER Diagram</b>
+    <b onCLick="scrollToElement('erdiagramdetail')" href="javascript:void(0)">6.2. Details of Table</b>
+
+
+    
+
+
+  </div>
+
+
+  <!-- All the details is under this div which id name is "main". -->
+  <div id="main" class="container">
+
+    <div class="header" id="hd">
+    	<hr>
+      <h1>Software Design Specification</h1>
+      <h2>For</h2>
+      <h1>FITMENT</h1>
+      <div class="middle">
+
+      	<p>Prepared By:</p>
+      	<p>Abrar Faisal - 1712677642  <b>Sec:01</b></p>
+      	<p>Abdulla All Noman - 1711793642  <b>Sec:01</b></p>
+        <p>Abdullah Ibne Ali - 1711200042  <b>Sec:02</b></p>
+      	<p>Date:30-10-2019</p>
+      </div>
+    <div class="foot" >
+      	<h4>Department of Electrical and Computer Engineering (ECE)</h4>
+      	<h4> North South University (NSU)</h4>
+    </div>
+    </div>
+<!-- Table of Contents -->
+
+    <div id="tableOfContent">
+    	<h3>Table of Contents</h3>
+       <ol>
+       	<li>Introduction........................................................................................3
+        
+        
+
+       	</li>
+
+       	<li>Document Conventions.....................................................................3<br>
+       		
+
+       	</li>
+
+       	<li>Description of Design Components...................................................3-4
+       		
+
+       	</li>
+       	<li> High-Level Component Design.........................................................4
+       		
+       	</li>
+       <li>Class diagrams.................................................................................4-5
+       		<ol>
+       	<li>User......................................................................................5-6</li>
+        <li>Admin......................................................................................6</li>
+        <li>Buyer.....................................................................................6-7</li>
+        <li>Review....................................................................................7</li>
+        <li>Interactions.............................................................................7</li>
+        <li>Item........................................................................................7-9</li>
+        <li>Ordered Item.........................................................................9</li>
+
+        </ol>
+
+       	</li>
+       	<li>Database Design
+       	<ol>
+       	<li>ER Diagram..........................................................................10</li>
+        <li>Details of Table.....................................................................10-12</li>
+        
+
+        </ol>
+    </li>
+       	
+
+       
+    </div>
+
+    <h2 id="introduction" style="text-align: center;">1.Introduction</h2>
+    <p>The Software Design Specification (SDS) document will specify a high-level view of the architecture of our system, and on the interaction between the user and the system and detailing a low-level view of each component of the software and how the components interact with each other.
+    This document's purpose is to provide a high-level design framework around which to build our project FITMENT.  It also provides a list of requirements against which to test the final project and determine whether we were able to successfully implement the system according to design.
+</p>
+
+
+    <h2 id="documentConventions" style="text-align: center;">2.Document Conventions</h2>
+	<p>Main Section Titles<br><br>
+
+      Font: Times New Roman<br>
+      Face: Bold<br>
+      Size: 18<br>
+
+    Sub Section Titles<br><br>
+
+      Font: Times New Roman<br>
+      Face: Bold<br>
+      Size: 14<br>
+
+    Other Text Explanations<br><br>
+
+      Font: Times New Roman<br>
+      Face: Normal<br>
+      Size: 12<br>
+  </p>
+
+
+
+
+
+    <h2 id="designComponents" style="text-align: center;">3.Description of Design Components</h2>
+      <p> The following bulleted outline provides a basic overview of the purpose and architecture of our system's major components.  The tables in the remainder of section 3 will provide more details on each component:
+
+          <p>• Database: We will be using relational database.  It will contain tables to represent various project data.</p>
+          <p>•	Class Library: The Class Library will be a package of classes common to the Server Software and the Client Software.  The server software will use these class definitions to know how to store the objects in the database.  The client software will use the class definitions in order to ask for and display the correct information about each class type</p>
+
+            <p>•	User</p>
+            <p>•	Admin</p>
+            <p>•	Register</p>
+            <p>•  Buyer</p>
+            <p>•	Item</p>
+            <p>•	Ordered item</p>
+            <p>•	Review</p><br>
+
+          <p>•	Reporting Application: A web application which will use the information in the database to produce useful reports for users.</p>
+          <p>•	Server Software: Our server software will directly manipulate the contents of the database, based on commands from the Server Procedure Proxy.</p>
+          <p>•	Server Procedure Proxy: The Server Procedure Proxy will provide an interface for the clients to request information or submit updates to the server.</p>
+          <p>•	Client Software:  The Client Software will reside on either a desktop computer or an android.  Its purpose is to present data to the user as requested, and provide an interface so that the user can easily update project information.  It will handle conflict resolution automatically when possible, and otherwise allow the user to choose which version of an item to keep.</p><br>
+
+              <p>  •  Android Client: The Android client will allow the user to view basic information about and make simple changes to data regarding projects assigned to them.</p>
+              <p>  •  Desktop Client: With significantly more computing power, screen size, and storage space than the android, the desktop client </p><br>
+
+
+
+      
+      </p>
+
+
+
+
+    <h2 id="highlevel" style="text-align: center;">4. High-Level Component Design</h2>
+    <div>
+      
+       <br>
+       This diagram shows how components depend on each other :
+        <br>
+       
+       
+        <img src="images/Component Design.JPG" class="use-case-pic" style="display: block;
+             margin-left: auto; margin-right: auto; width: 50%; align-items: center;">
+            <p style="text-align: center;">Figure: Component Dependencies.</p>
+    </div>
+
+
+        <h2 id="classdiagram" style="text-align: center;">5. Class diagrams</h2>
+        <div>
+       	
+        <img src="images/uml diagram.jpg" class="use-case-pic" style="display: block;
+             margin-left: auto; margin-right: auto; width: 50%; align-items: center;">
+            <p style="text-align: center;">Figure: UML Class Diagram.</p>
+       </div>
+
+
+        <h2 id="userec">5.1 User</h2>
+
+            <b>Class Name: User</b><br>
+           Purposes: Details about user <br>
+  <b>Attributes:</b><br>
+	1.Name:name <br>
+	Type:String<br>
+	Purposes:adding the name of an user by the system<br>
+	2.Name:password<br>
+	Type:String<br>
+	Purposes:adding Password of an user by the system<br>
+	3.Name:email<br>
+	Type:String<br>
+	Purposes:adding the email of an user by the system<br>
+	4.Name:phone<br>
+	Type:String<br>
+	Purposes:adding the contact name of an user by the system<br>
+	5.Name:address<br>
+	Type:String<br>
+	Purposes:adding the address of an user by the system<br>
+	<b>Methods:</b><br>
+	1.Name:User<br>
+	Parameters:name,password,email,phone<br>
+	Return Type:current instance of the class<br>
+	Purposes & Description:Constructor of the class<br>
+	2.Name:getName()<br>
+	Parameters:null<br>
+	Return Type:String<br>
+	Purposes & Description:To get the name from the user.<br>
+	3.Name:getPassword()<br>
+	Parameters:null<br>
+	Return Type:String<br>
+	Purposes & Description:To get the password from the user.<br>
+	4.Name:getEmail()<br>
+	Parameters:null<br>
+	Return Type:String<br>
+	Purposes & Description:To get the email from the user.<br>
+	5.Name:getPhone()<br>
+	Parameters:null<br>
+	Return Type:String<br>
+	Purposes & Description:To get the contact number from the user.<br>
+	6.Name:getAddress()<br>
+	Parameters:null<br>
+	Return Type:String<br>
+	Purposes & Description:To get the address from the user.<br>
+	 <h2 id="admin">5.2 Admin</h2>
+     <b> Class Name: Admin</b><br>
+Purposes: To maintain the total system by admin<br>
+Attributes:(extended from the User class) <br>
+<b>Methods:</b><br>
+	1.Name:addItem()<br>
+	Parameters:item(Item type)<br>
+	Return Type:void<br>
+	Purposes & Description:To add new item to the system<br>
+	2.Name:removeItem()<br>
+	Parameters:item(Item type)<br>
+	Return Type:void
+	Purposes & Description:To remove an item from the system by admin<br>
+	3.Name:editItem()<br>
+	Parameters:null<br>
+	Return Type:void<br>
+	Purposes & Description:To edit the items description by admin<br>
+	4.Name:viewAllItem()<br>
+	Parameters:null<br>
+	Return Type:void<br>
+	Purposes & Description:To view total items of the system<br>
+	5.Name:acceptOrder()<br>
+	Parameters:order(Order type)<br>
+	Return Type:void<br>
+	Purposes & Description:To accept order from the user<br>
+	6.Name:rejectOrder()<br>
+	Parameters:order(Order type)<br>
+	Return Type:void<br>
+	Purposes & Description:To reject an order from the user<br>
+
+	 <h2 id="buyer">5.3 Buyer</h2>
+	 <b>Class Name: Buyer</b><br>
+	<b>Purposes: User type buyer</b><br>
+<b>Attributes:</b><br>
+	1.Name:orderedItems<br>
+	Type:Item<br>
+	Purposes:The list of items ordered by user  <br>
+<b>Methods:</b><br>
+	1.Name:getOrderedItems()<br>
+	Parameters:null<br>
+	Return Type:Item<br>
+	Purposes & Description:To get the order list of items from the user<br>
+	2.Name:addOrderedItems()<br>
+	Parameters:null<br>
+	Return Type:void<br>
+	Purposes & Description:To add the order item on to the list<br>
+
+	<h2 id="review">5.4 Review</h2>
+	<b>Class Name: Review</b><br>
+<b>Purposes: To review the product used by the user</b><br>
+<b>Attributes:</b><br>
+	1.Name:Star<br>
+	Type:int<br>
+	Purposes:user can review a product on the basis of one to five star <br>
+	2.Name:Comment<br>
+	Type:String<br>
+	Purposes:user can comment on a particular product<br>
+	3.Name:user<br>
+	Type:User<br>
+	Purposes:this will record which user reviewed the product<br>
+<b>Methods:</b>Null<br>
+
+<h2 id="interactions">5.5 Interactions</h2>
+<b>Class Name: Interactions</b><br>
+<b>Purposes: Interact on a item </b><br>
+<b>Attributes:Null</b><br>
+<b>Methods:</b><br>
+	1.Name:loadItems()<br>
+	Parameters:category<br>
+	Return Type:Item<br>
+	Purposes & Description:keep the track of an item purchased by the user<br>
+	2.Name:reviewProduct()<br>
+	Parameters:product<br>
+	Return Type:void<br>
+	Purposes & Description:User can review a product here.<br>
+
+
+	  <h2 id="item">5.6 Item</h2>
+	  <b>Class Name: Item</b><br>
+<b>Purposes: Every details of a product or item added by the admin to the system</b><br>
+<b>Attributes:</b><br>
+	1.Name:productId<br>
+	Type:int<br>
+	Purposes:unique identification of product <br>
+	2.Name:name<br>
+	Type:string<br>
+	Purposes:name of the product<br>
+	3.Name:price<br>
+	Type:int<br>
+	Purposes:price of the product<br>
+	4.Name:category<br>
+	Type:string<br>
+	Purposes:category selection of the product<br>
+	5.Name:image<br>
+	Type:Image<br>
+	Purposes:image of the product<br>
+	6.Name:model<br>
+	Type:Object<br>
+	Purposes:selection of model of the product for AR<br>
+	7.Name:description<br>
+	Type:String<br>
+	Purposes:product description<br>
+	8.Name:reviews<br>
+	Type:Review<br>
+	Purposes:review of the products  <br>
+<b>Methods:</b><br>
+	1.Name:Item<br>
+	Parameters:productId,name,price,category,model,image<br>
+	Return Type:current instance of the class<br>
+	Purposes & Description:Constructor of the class<br>
+	2.Name:getProductId()<br>
+	Parameters:null<br>
+	Return Type:int<br>
+	Purposes & Description:to get the id of the product<br>
+	3.Name:getName()<br>
+	Parameters:null<br>
+	Return Type:String<br>
+	Purposes & Description:To get the name of the product<br>
+	4.Name:getPrice()<br>
+	Parameters:null<br>
+	Return Type:int<br>
+	Purposes & Description:To get the price of the product<br>
+	5.Name:getCategory()<br>
+	Parameters:null<br>
+	Return Type:String<br>
+	Purposes & Description:To get the category of the product<br>
+	6.Name:getImage()<br>
+	Parameters:null<br>
+	Return Type:Image<br>
+	Purposes & Description:To get the image of the product<br>
+	7.Name:getModel()<br>
+	Parameters:null<br>
+	Return Type:Object<br>
+	Purposes & Description:To get the 3d model for AR<br>
+	8.Name:getDescription()<br>
+	Parameters:null<br>
+	Return Type:String<br>
+	Purposes & Description:To get the overall description of the product<br>
+	9.Name:getReviews()<br>
+	Parameters:null<br>
+	Return Type:Review<br>
+	Purposes & Description:To get the review of the product<br>
+	10.Name:addreview()<br>
+	Parameters:null<br>
+	Return Type:void<br>
+	Purposes & Description:To add the review of a product.<br>
+
+	 <h2 id="ordereditem">5.7 Ordered Item</h2>
+	     <b>Class Name: OrderedItem</b><br>
+<b>Purposes: The item(s) details which ordered by user</b><br>
+<b>Attributes: </b><br>
+	1.Name:orderId<br>
+	Type:String<br>
+	Purposes:unique id of every order<br>
+	2.Name:quantity<br>
+	Type:int<br>
+	Purposes:quantity of a certein product<br>
+	3.Name:subTotal<br>
+	Type:int<br>
+	Purposes:total amount of money of an order<br>
+	4.Name:orderedStatus<br>
+	Type:OrderStatus<br>
+	Purposes:status of an order<br>
+	5.Name:dateAdded<br>
+	Type:Date<br>
+	Purposes:Date of the order taken place  <br>
+<b>Methods:</b><br>
+
+	1.Name:OrderedItem()<br>
+	Parameters:product,quality<br>
+	Return Type:current instance of the class<br>
+	Purposes & Description:Constructor<br>
+	2.Name:getOrderedId()<br>
+	Parameters:null<br>
+	Return Type:String<br>
+	Purposes & Description:return the unique id of the order<br>
+	3.Name:getQuantity()<br>
+	Parameters:null<br>
+	Return Type:int<br>
+	Purposes & Description:return the quantity of an ordered item<br>
+	4.Name:getSubTotal()<br>
+	Parameters:null<br>
+	Return Type:int<br>
+	Purposes & Description:return the total amount after an order<br>
+	5.Name:getDateAdded()<br>
+	Parameters:null<br>
+	Return Type:Date<br>
+	Purposes & Description:return the date when the order take place<br>
+
+
+        <h2 id="databasedesign" style="text-align: center;">6.Database Design</h2>
+          
+        <h2 id="erdiagram">6.1. ER Diagram</h2>
+       <div>
+       	
+        <img src="images/er.PNG" class="use-case-pic" style="display: block;
+             margin-left: auto; margin-right: auto; width: 50%; align-items: center;">
+           
+       </div>
+
+
+        <h2 id="erdiagramdetail">6.2. Details of Table</h2>
+        <b>Table Name: User</b><br>
+<b>Purposes: To register and open account to order products and many more.</b><br>
+<b>Attributes:</b><br>
+	1.Name:Id<br>
+	Type:Primary key<br>
+	Purposes:unique identification of user <br>
+	2.Name:First Name<br>
+	Type:string<br>
+	Purposes:store first name of user<br>
+	3.Name:Last Name<br>
+	Type:string<br>
+	Purposes:store last name of user<br>
+	4.Name:email<br>
+	Type:string<br>
+	Purposes:store email name of user<br>
+	5.Name:Password<br>
+	Type:string<br>
+	Purposes:store password of user<br>
+
+	 <b>Table Name: Billing Profile</b><br>
+<b>Purposes: Profile after add some item into cart.</b><br>
+<b>Attributes:</b><br>
+	1.Name:Id<br>
+	Type:Foreign key<br>
+	Purposes:unique identification of billing profile with user <br>
+	2.Name:Email<br>
+	Type:string<br>
+	Purposes:to confirm payment and user.<br>
+	3.Name:Active<br>
+	Type:boolean<br>
+	Purposes:User active or not.<br>
+	4.Name:Update<br>
+	Type:value<br>
+	Purposes:update profile after give the payment.<br>
+	5.Name:Time Stamp<br>
+	Type:time<br>
+	Purposes:store time of payment.<br>
+
+	 <b>Table Name: Cart</b><br>
+<b>Purposes: To add some item for order.</b><br>
+<b>Attributes:</b><br>
+	1.Name:Id<br>
+	Type:Foreign key<br>
+	Purposes:unique identification of user to order some item. <br>
+	2.Name:Sub-Total<br>
+	Type:float<br>
+	Purposes:To store individual bill of each item.<br>
+	3.Name:Total<br>
+	Type:float<br>
+	Purposes:Total bill of user.<br>
+	4.Name:Update<br>
+	Type:value<br>
+	Purposes:update profile after add some item to cart.<br>
+	5.Name:Time Stamp<br>
+	Type:time<br>
+	Purposes:store time of add to cart.<br>
+
+	 <b>Table Name: Product</b><br>
+<b>Purposes: List of all products.</b><br>
+<b>Attributes:</b><br>
+	1.Name:Id<br>
+	Type:Foreign key<br>
+	Purposes:unique identification of user to add products.. <br>
+	2.Name:Title<br>
+	Type:string<br>
+	Purposes:Product title.<br>
+	3.Name:Description<br>
+	Type:string<br>
+	Purposes:Details of products..<br>
+	4.Name:Price<br>
+	Type:float<br>
+	Purposes:Price of products.<br>
+	5.Name:Image<br>
+	Type:Image file<br>
+	Purposes:Image of product.<br>
+	6.Name:Slug<br>
+	Type:Slug<br>
+	Purposes:slug to match primary key.<br>
+	7.Name:Features<br>
+	Type:string<br>
+	Purposes:Features products.<br>
+	8.Name:Active<br>
+	Type:Boolean<br>
+	Purposes:See the active status.<br>
+	9.Name:Time Stamp<br>
+	Type:time<br>
+	Purposes:store time.<br>
+
+	 <b>Table Name: Order</b><br>
+<b>Purposes: To order products.</b><br>
+<b>Attributes:</b><br>
+	1.Name:Id<br>
+	Type:Foreign key<br>
+	Purposes:unique identification order id . <br>
+	2.Name:Cart id<br>
+	Type:Foreign key<br>
+	Purposes:unique identification cart id.<br>
+	3.Name:Status<br>
+	Type:string<br>
+	Purposes:Current status of order.<br>
+	4.Name:Active<br>
+	Type:Boolean<br>
+	Purposes:See the active status.<br>
+	5.Name:Total<br>
+	Type:float<br>
+	Purposes:Total bill of order.<br>
+	6.Name:Shipping Total<br>
+	Type:float<br>
+	Purposes:shipping cost if any.<br>
+
+	 
+
+  </div>
+
+</body>
+
+<script>/*Using JavaScript to make the website functional */
+  /* This function will be called by print button to print the whole HTML document*/
+  function printDoc() {
+  	document.getElementById("hd").style.paddingBottom = "300px";
+    /*document.getElementById("introduction").style.paddingTop = "280px";*/
+    document.getElementById("tableOfContent").style.display= "block";
+    document.getElementById("tableOfContent").style.paddingBottom = "580px"; /*Showing table of content */
+    document.getElementById("main").style.paddingTop = "50px";
+  	document.getElementById("main").style.paddingLeft = "50px";
+  	document.getElementById('mySidenav').style.display = "none";
+  	/*document.getElementById("introduction").style.paddingTop = "325px";Hide the side navbar*/
+
+
+  window.print();
+}
+  /*To scroll to a given Element ID*/
+  function scrollToElement(elementId) {
+    document.getElementById(elementId).scrollIntoView({
+      behavior: 'smooth'
+    });
+  }
+</script>
+
+</html>

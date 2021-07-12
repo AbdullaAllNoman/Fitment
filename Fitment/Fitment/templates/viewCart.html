@@ -1,0 +1,64 @@
+{% extends "navbar.html" %}
+<!--
+extend html from navbar
+-->
+{% load static from staticfiles %}
+<!--
+Load all static files
+-->
+{% block content %}
+<!--
+All extends html file will be shown in this portion of html page.
+Navbar will be shown here
+-->
+<div class="container" id="pro">
+  <h1>Cart List</h1>
+  <hr class="new4">
+</div>
+
+<div class="container">
+  <!--
+Table of all the products
+that added to the cart list
+  -->
+<table>
+  <tr>
+    <th id="tb">Product name</th>
+    <th id="tb">Quantity</th>
+    <th id="tb">Price</th>
+  </tr>
+  <!--
+  prod is all the products
+  that are in cartlist
+  -->
+  {% for pro in prod %}
+  <tr>
+    <!--
+    product name,quantity and price
+    -->
+    <td>{{pro.val.pname}}</td>
+    <td>{{pro.val.quantity}}</td>
+    <td>{{pro.val.price}}</td>
+  </tr>
+  {% endfor %}
+  <!--
+  end for loop
+  -->
+  <tr>
+    <td>     </td>
+    <td>Total</td>
+    <!--
+  Subtotal of all products
+    -->
+    <td>{{total}}</td>
+  </tr>
+</table>
+<!--
+this will confirm buying the product
+-->
+<button class="block"><a href="{% url 'order' total %}">Buy Products</a></button>
+</div>
+{% endblock %}
+<!--
+end block
+-->

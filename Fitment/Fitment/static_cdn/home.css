@@ -1,0 +1,212 @@
+/* Set a style for carousel Image
+Make the width and height full */
+.carousel-inner img {
+      width: 100%;
+      height: 100%;
+  }
+/* import font awesome library */
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+/* Set a style for html body */
+html,body{
+
+  width:100%;
+  height:100%;
+  font-family: 'Poppins', sans-serif;
+  color:#222;
+  text-transform: capitalize;
+}
+/* padding the navbar */
+.navbar{
+  padding:.8rem;
+
+}
+/* right padding the navbar list */
+.navbar li{
+  padding-right: 20px;
+}
+/* set font size of navbar link */
+.nav-link{
+   font-size: 1.1em !important;
+}
+/* Set a style for carousel Image
+ */
+.carousel-inner img{
+  height:700px;
+width:100%;
+opacity: 0.5;
+}
+/* Set a style for carousel iamge position */
+.carousel-caption{
+  position:absolute;
+
+
+}
+/* Set a style for carousel header */
+.carousel-caption h1{
+  text-shadow: 3px 3px 3px 15px ;
+  color:yellow;
+}
+/* Set a style for carousel header */
+.carousel-caption h3{
+  text-shadow: 3px 3px 3px 15px ;
+  padding-bottom: 1rem;
+  color:teal;
+}
+/* Set a style for primary button */
+.btn-primary{
+background-color: black
+}
+/* Set a style when button is hover */
+.btn-primary:hover{
+background-color: grey;
+
+}
+/* Set a style for jumbotron */
+.jumbotron{
+  padding: 1rem;
+  border-radius: 0;
+
+}
+/* Set a style for class padding */
+.padding{
+  padding-bottom:2rem;
+}
+/* Set a style for welcome text */
+.welcome{
+  width:75%;
+  margin: 0 auto;
+  padding-top: 2rem;
+}
+/* Set a style for welcome hr */
+.welcome hr{
+  border-top:2px solid grey;
+  width:95%;
+  margin-top: .3rem;
+  margin-bottom: 1rem;
+}
+/* Set colors for font icons */
+.fa-html5{
+  color:#e54d26;
+}
+
+.fa-css3{
+  color:#563d7c;
+}
+
+.fa-bootstrap{
+  color:#2163af;
+}
+.fa-html5,.fa-css3,.fa-bootstrap{
+  font-size: 4rem;
+  margin:1rem;
+}
+
+.fun{
+  width: 100%;
+  margin-bottom: 2rem;
+}
+.gif{
+  max-width: 100%;
+  border-radius:85%;
+}
+.social a{
+  font-size: 4rem;
+  padding:2.5rem;
+}
+.fa-facebook{
+  color:#3b5998;
+}
+
+.fa-twitter{
+  color:#00aced;
+}
+.fa-instagram{
+  color:#517fa4;
+}
+.fa-youtube{
+  color:#bb0000;
+}
+.fa-google-plus-g{
+  color:#dd4b39;
+}
+
+.fa-facebook:hover,
+
+.fa-twitter:hover,
+
+.fa-instagram:hover,
+
+.fa-youtube:hover,
+
+.fa-google-plus-g:hover{
+  color:#d5d5d5;
+}
+/* Set a style for footer*/
+footer{
+  background-color: lightblue;
+    color:black;
+    padding-top: 2rem;
+}
+/* Set a style for hr light*/
+hr.light{
+  border-top: 1px solid #d5d5d5;
+  width: 75%;
+  margin-top: .8rem;
+  margin-bottom: 1rem;
+}
+#ni{
+  border-top: 1px solid #d5d5d5;
+  width: 100%;
+  margin-top: .8rem;
+  margin-bottom: 1rem;
+}
+
+.carousel-item{
+transition: -webkit-transform 0.5s ease;
+transition:  transform 0.5s ease;
+transition:  transform 0.5s ease,-webkit-transform 0.5s ease;
+-webkit-backface-visibility:visible;
+backface-visibility:visible;
+
+}
+/* Set a style for figure*/
+figure{
+  position: relative;
+  width: 100%;
+  height: 60%;
+  margin:0!important;
+}
+/* Set a style for product
+padding and align*/
+#pro{
+  padding: 90px;
+  text-align: center;
+}
+/* Set a style for hr*/
+hr.new4 {
+  border: 2px solid black;
+  width:250px;
+}
+/* Set a style for product image padding*/
+#productpd{
+  padding-left: 190px;
+}
+.checked {
+  color: orange;
+}
+.white{
+  color :white;
+}
+/* Set styles for padding*/
+#pad{
+  padding-top: 80px;
+}
+#aug{
+  padding: 90px;
+}
+#gap{
+  padding-left: 190px;
+}
+#detailpad{
+  padding-top: 100px;
+}

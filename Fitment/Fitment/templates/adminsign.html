@@ -1,0 +1,55 @@
+<!--
+load all static files
+-->
+{% load static from staticfiles %}
+<!doctype html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!--
+Add static css
+-->
+  <link rel="stylesheet" href="{% static 'adminsign.css' %}">
+  <!--
+Font awesome library add
+-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!--bootstrap libraries are added -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <title>Admin</title>
+</head>
+<body>
+  <!--
+Signup form of admin
+-->
+  <div class="container" id="gap">
+    <!--
+  here adminsign is url name.It will take action after submit the form
+  -->
+  <form action="{% url 'adminsign' %}" method="post" style="max-width:500px;margin:auto">
+    <!--
+    CSRF tokens can prevent CSRF attacks by making it impossible for an attacker
+    to construct a fully valid HTTP request suitable for feeding to a victim user.
+    Since the attacker cannot determine or predict the value of a user's CSRF token, they cannot 
+    construct a request with all the parameters that are necessary for the application to honor the request.
+  -->
+      {% csrf_token %}
+  <h2>Admin LogIn</h2>
+  <div class="input-container">
+    <i class="fa fa-user icon"></i>
+    <input class="input-field" type="text" placeholder="Username" name="name">
+  </div>
+  <div class="input-container">
+    <i class="fa fa-key icon"></i>
+    <input class="input-field" type="password" placeholder="Password" name="pass">
+  </div>
+ <input type="submit" name="SignIn Admin">
+</form>
+</div>
+</body>
+</html>

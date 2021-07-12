@@ -1,0 +1,38 @@
+{% load static from staticfiles %}
+<!--
+load all static files
+-->
+<!doctype html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!--
+Add bootstrap libraries
+-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+  <title>Page Title</title>
+</head>
+<body>
+
+  <div class="container">
+    <!--
+  this div will be shown when cart is empty.
+  -->
+    <div class="alert alert-danger">
+      <strong>Empty!</strong> Your cart is empty.Add some items to cart
+    </div>
+    <!--
+  this  will show product url to go to product page
+  -->
+    <div class="alert alert-info">
+    <strong>Add Product!</strong> <a class="nav-link" href="{% url 'products' %}">Go to Products</a>
+  </div>
+  </div>
+</body>
+</html>

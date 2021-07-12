@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <title>SRS</title>
+
+  <!-- Adding Css File -->
+  <link href="css/navbar.css" rel="stylesheet">
+  <link href="css/index.css" rel="stylesheet">
+
+</head>
+
+<body>
+	<!-- Side Navbar -->
+  <div id="mySidenav" class="sidenav">
+    <button  onclick="printDoc()">Print this page</button>
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"></a>
+    <a onCLick="scrollToElement('introduction')" href="javascript:void(0)">1.Introduction</a>
+      <b onCLick="scrollToElement('purpose')" href="javascript:void(0)">1.1 Purpose</b>
+      <b onCLick="scrollToElement('conventions')" href="javascript:void(0)">1.2 Document Conventions</b>
+      <b onCLick="scrollToElement('audience')" href="javascript:void(0)">1.3 Intended Audience and Reading Suggestions</b>
+      <b onCLick="scrollToElement('scope')" href="javascript:void(0)">1.4 Product Scope</b>
+      <b onCLick="scrollToElement('references')" href="javascript:void(0)">1.5 References</b>
+
+    <a onCLick="scrollToElement('overallDescription')" href="javascript:void(0)">2.Overall Description</a>
+      <b onCLick="scrollToElement('perspective')" href="javascript:void(0)">2.1 Product Perspective</b>
+      <b onCLick="scrollToElement('functions')" href="javascript:void(0)">2.2 Product Functions</b>
+      <b onCLick="scrollToElement('characteristics')" href="javascript:void(0)">2.3 User Classes and Characteristics</b>
+      <b onCLick="scrollToElement('environment')" href="javascript:void(0)">2.4	Operating Environment</b>
+      <b onCLick="scrollToElement('constraints')" href="javascript:void(0)">2.5 Design and Implementation Constraints</b>
+      <b onCLick="scrollToElement('userDoc')" href="javascript:void(0)">2.6 User Documentation</b>
+      <b onCLick="scrollToElement('assumptions')" href="javascript:void(0)">2.7 Assumptions and Dependencies</b>
+
+    <a onCLick="scrollToElement('exInterface')" href="javascript:void(0)">3.External Interface Requirements</a>
+      <b onCLick="scrollToElement('ui')" href="javascript:void(0)">3.1	User Interfaces</b>
+      <b onCLick="scrollToElement('hi')" href="javascript:void(0)">3.2 Hardware Interfaces</b>
+      <b onCLick="scrollToElement('si')" href="javascript:void(0)">3.3 Software Interfaces</b>
+      <b onCLick="scrollToElement('ci')" href="javascript:void(0)">3.4 Communications Interfaces</b>
+
+    <a onCLick="scrollToElement('systemFeatures')" href="javascript:void(0)">4.System Features</a>
+      <b onCLick="scrollToElement('fr1')" href="javascript:void(0)">4.1 Functional Requirement 1</b>
+      <b onCLick="scrollToElement('fr2')" href="javascript:void(0)">4.2 Functional Requirement 2</b>
+
+    <a onCLick="scrollToElement('nonFunctional')" href="javascript:void(0)">5. Other Nonfunctional Requirements</a>
+      <b onCLick="scrollToElement('performance')" href="javascript:void(0)">5.1	Performance Requirements</b>
+      
+      <b onCLick="scrollToElement('safety')" href="javascript:void(0)">5.2 Safety Requirements</b>
+      
+      <b onCLick="scrollToElement('security')" href="javascript:void(0)">5.3 Security Requirements</b>
+      <b onCLick="scrollToElement('quality')" href="javascript:void(0)">5.3 Software Quality Attributes</b>
+      <b onCLick="scrollToElement('business')" href="javascript:void(0)">5.4 Business Rules</b>
+
+    <a onCLick="scrollToElement('other')" href="javascript:void(0)">6. Other Requirements</a>
+    <a onCLick="scrollToElement('appendixA')" href="javascript:void(0)">Appendix A: Glossary</a>
+    <a onCLick="scrollToElement('appendixB')" href="javascript:void(0)">Appendix B: Analysis Models</a>
+    <a onCLick="scrollToElement('appendixC')" href="javascript:void(0)">Appendix C: To Be Determined List</a>
+    
+  </div>
+  
+  
+  <!-- All the details is under this div which id name is "main". -->
+  <div id="main" class="container">
+    
+    <div class="header" id="hd">
+    	<hr>
+      <h1>Software Requirements Specification</h1>
+      <h2>For</h2>
+      <h1>FITMENT</h1>
+      <div class="middle">
+
+      	<p>Prepared By:</p>
+      	<p>Abrar Faisal - 1712677642</p>
+      	<p>Abdulla All Noman - 1711793642</p>
+      	<p>Date:20-10-2019</p> 
+      </div>
+    <div class="foot" >
+      	<h4>Department of Electrical and Computer Engineering (ECE)</h4> 
+      	<h4> North South University (NSU)</h4>
+    </div>
+    </div>
+<!-- Table of Contents -->
+    <div id="tableOfContent">
+    	<h3>Table of Contents</h3>
+       <ol>
+       	<li>Introduction
+       		<ol>
+       	<li>Purpose........................................................................................3</li>
+        <li>Document Conventions................................................................3</li>
+        <li>Intended Audience and Reading Suggestions.............................3</li>
+        <li>Product Scope............................................................................3,4</li>
+        <li>References...................................................................................4</li>
+        </ol> 
+
+       	</li>
+
+       	<li>Overall Description
+       		<ol>
+       	<li>Product Perspective.....................................................................4</li>
+        <li>Product Functions.........................................................................4</li>
+        <li>User Classes and Characteristics................................................5</li>
+        <li>Operating Environment................................................................5</li>
+        <li>Design and Implementation Constraints......................................5</li>
+        <li>User Documentation....................................................................5</li>
+        <li>Assumptions and Dependencies.................................................5</li>
+        </ol> 
+
+       	</li>
+
+       	<li>External Interface Requirements
+       		<ol>
+       	<li>User Interfaces.........................................................................5,6</li>
+        <li>Hardware Interfaces....................................................................6</li>
+        <li>Software Interfaces......................................................................6</li>
+        <li>Communications Interfaces.........................................................6</li>
+        
+        </ol> 
+
+       	</li>
+       	<li>System Features
+       		<ol>
+       	<li>System Feature 1....................................................................7-19</li>
+        <li>System Feature 2 (and so on)...............................................19-22</li>
+        </ol> 
+
+       	</li>
+       <li>Other Nonfunctional Requirements
+       		<ol>
+       	<li>Performance Requirements...................................................22-23</li>
+        <li>Safety Requirements.................................................................23</li>
+        <li>Security Requirements...........................................................23-24</li>
+        <li>Software Quality Attributes.....................................................24-25</li>
+        <li>Business Rules.........................................................................25</li>
+       
+        </ol> 
+
+       	</li>
+       	<li>Other Requirements
+       	<h5>Appendix A: Glossary..................................................................................................25-26</h5>
+       	<h5>Appendix B: Analysis Models........................................................................................26</h5>
+       	<h5>Appendix C: To Be Determined List...............................................................................26</h5>
+
+       	</li>
+       
+       </ol>
+    </div>
+
+    <h2 id="introduction">1. Introduction</h2>
+    <p>The Software Requirements Specification is designed to document and describe the
+    agreement between the customer and the developer regarding  the specification of the
+    software product requested.This document is broken into a number of sections
+    used to logically separate the software requirements into easily referenced parts.This document is meant to discuss the features of our project FITMENT, so as to serve as a guide to the deveopers on one hand and a software validation document for the prospective client on the other. The abbreviations and definitions that are used in this SRS are also described.</p>
+    
+    <h3 id="purpose">1.1 Purpose</h2>
+    <p>The purpose of this Software Requirements Specification (SRS) is to define and describe the functions and specifications of our project FITMENT. This Software Requirements Specification illustrates, in clear terms, the system’s primary uses and required functionality  as specified by our customer so that the next developers can easily understand what we did and how to change anything if it is required.</p>
+    
+    <h3 id="conventions">1.2 Document Conventions</h2>
+    <p>Main Section Titles<br><br>
+
+      Font: Times New Roman<br>
+      Face: Bold<br>
+      Size: 18<br>
+  
+    Sub Section Titles<br><br>
+  
+      Font: Times New Roman<br>
+      Face: Bold<br>
+      Size: 14<br>
+  
+    Other Text Explanations<br><br>
+  
+      Font: Times New Roman<br>
+      Face: Normal<br>
+      Size: 12<br>
+  </p>
+
+    <h3 id="audience">1.3	Intended Audience and Reading Suggestions</h2>
+    <p>The SRS is intended for software developers, designers, testers, website owners, managers and coordinators. The document is intended to be read sequentially as it is. </p>
+
+    <h3 id="scope">1.4	Product Scope</h2>
+    <p>FITMENT is an online platform for buying furniture and home decor online. But it is different from other e-commerce websites because Augmented Reality buyers can get an idea of what they are going to buy and how it may look in their room through android app. When the users find a suitable place for the furniture, they can place the furniture there and then move the phone to see how the furniture looks at that position.<br>
+
+      The seller will have to provide the specifications of a furniture. Our design team will then create a 3D model of the furniture and that will be used for augmentation. This photo will be given to the user which will float on the camera screen when the user selects that furniture. The camera will be able to detect plains. The furniture can be placed on a selected plain and it will be anchored there. The object will stay at the selected place and the user will be able to move around and see the furniture from every angle.<br>
+      </p>
+
+    <h3 id="references">1.5	References</h2>
+    <p>[1] IEEE Software Engineering Standards Committee, “IEEE Std 830-1998, IEEE Recommended
+      Practice for Software Requirements Specifications”, October 20, 1998<br>
+      [2] "Syque," [Online]. Available: http://syque.com/quality_tools/tools/Tools104.htm. [Accessed 15 October 2019].
+      </p>
+
+    <h2 id="overallDescription">2. Overall Description</h2>
+      <p>This section includes details about what is and is not expected in this FITMENT project and in this system in
+          addition to which cases are intentionally unsupported and assumptions that will be used
+          in the creation of this project.This section will also give an overview of the whole system. At last, the constraints and assumptions for the system will be presented.</p>
+          <img src="images/Project_logo.png" class="use-case-pic" style="display: block;
+             margin-left: auto; margin-right: auto; width: 20%; align-items: center;">
+            <p style="text-align: center;">Figure:Product Logo.</p>
+
+    <h3 id="perspective">2.1 Product Perspective</h2>
+      <p>There are two parts in this system: one android application and one web portal. The mobile application will be used by the buyers who will be able to buy the products and view the products in AR. The web portal will be used by both the buyers and the sellers. The buyers can buy and the sellers can upload their product descriptions.<br>
+        The android application needs and version 7.0 or above. Android phones with version 7.0 or above comes with necessary hardware required for augmented reality support. The mobile app will be using the camera of the smartphone to implement the AR features. <br>
+        The mobile application and the web application will both have a database to store product data and user data. The web portal will have read, write and modify access of the database but the mobile app will only have read access. All database communication will happen through internet.
+        </p>
+    
+    <h3 id="functions">2.2 Product Functions</h2>
+      <p>Through the mobile apps the user will be able to buy furniture. Special feature of this app will be to see the product before buying in Augmented Reality. The users will also be able to search for a specific product with name or find it from the category menu. <br>
+
+        The web portal will have two parts, one for the administrator and another one is for the buyers. The buyers will be able to buy furniture from here also. But the website won’t be supporting any AR feature. As a result, the web portal will be accessible from any device as it won’t have any hardware constrain. The admins of the portal will be able to add new products with details, receive orders.<br>
+        </p>
+
+    <h3 id="characteristics">2.3 User Classes and Characteristics</h2>
+      <p>There are two types of users of the platform. The buyers and the admins.<br>
+
+        The buyers will be able to use the mobile app and the web app. They can use all the features the mobile app provides.<br>
+        
+        The administrator will take product data from the sellers and will upload them on the web portal. They will not have access to any management features from the mobile application.
+        </p>
+
+    <h3 id="environment">2.4 Operating Environment</h2>
+      <p>For Android:<br>
+
+        
+        Disk Space: 100 MB<br>
+        RAM: 1 GB<br>
+          Operating System: Android 7.0<br>
+        </p>
+
+    <h3 id="constraints">2.5 Design and Implementation Constraints</h2>
+      <p>Because of online application, internet connection is a constraint. Internet connection is a must for the application to take data from the database.<br>
+        Both the web portal and the mobile application will be constrained by the capacity of the database. Since the database is shared between both application it may be forced to queue incoming requests and therefor increase the time it takes to take data.<br>
+        Android version is a mobile software constraint as the SDK used requires android version 7.0 and above. Also, the need of a camera, gyro, accelerometer is hardware constraint for the android application as without these the AR feature will not work.
+        </p>
+
+    <h3 id="userDoc">2.6 User Documentation</h2>
+      <p>User documentation will be provided Once the development is completed and a prototype is released.</p>
+
+    <h3 id="assumptions">2.7 Assumptions and Dependencies</h2>
+      <p>One assumption for the android application is the application will be used mostly on high-end or latest phones as for a few years as the hardware requirement can only be met on those phones.<br>
+        Another assumption is phones with good camera will be providing the best performance as plane detection depends on the picture quality of the camera.<br>
+        Proper browser should be used for the web app and a stable internet connection is required.
+        </p>
+
+    <h2 id="exInterface">3. External Interface Requirements</h2>
+      <p>All inputs and outputs necessary for the requirements will be specified in this section. Hardware, Software and communication interfaces will also be characterized here.</p>
+        
+    <h3 id="ui">3.1 User Interfaces</h2>
+      <p>When the user enter into the apps or website for the first time, they will be landed onto the registration page. If the user is already registered he or she can select to login through a button which will bring him to a log-in page. Name, Password, Address, Phone Number will be collected from the registration page. Users should be able to login by using their email and password or through google or facebook.<br>
+        If the user is already logged into the system, they will land on the home page. The home page will show the most recent uploaded products to the buyers. Buyers will be able to search the products based on title or category tags of the products.<br>
+        Every user will have a profile page from where they can view or edit their user information.<br><br>
+        
+        When a consumer clicks on a product it will bring them to that specific product detail page. This page will contain name, retailer and description of the product. If the consumer is on the mobile app, they can also view the product via AR. This functionality will not be implemented in the web version. But on the mobile app a camera interface will open and show them the 3D model of the product.<br>
+        The product page will contain a rating system and a comment section where people that previously bought the product will be able to comment about the product.<br><br>
+        
+        Sellers can see their previously uploaded products from the administrator interface. They can see sales information and the orders that have been placed already. They will be able to add new products with detailed information and also remove an existing product.
+        </p>
+        
+    <h3 id="hi">3.2 Hardware Interfaces</h2>
+      <p>Neither the mobile application nor the web version has any special hardware requirements. So, the system will not have any hardware interface.  The camera required for AR experience is assumed to be provided by the mobile phones where the app will be installed.</p>
+
+    <h3 id="si">3.3 Software Interfaces</h2>
+      <p>Both the mobile application and the website will communicate with the database via internet. The operating system will provide such interfaces. Both the platforms will consist of operations regarding read and write of data.</p>
+
+    <h3 id="ci">3.4 Communications Interfaces</h2>
+      <p>The communication between the different part of the system will be handled by the operations provided by the browser or operating system.</p>
+    
+
+    <h2 id="systemFeatures">4. System Features</h2>
+    <div>
+      <p>This section includes the requirements that describe all the essential functions of the system.<br>
+        The naming convention will follow the following conventions<br>
+        FRPx – Primary functional requirement<br>
+        FRPx – Secondary functional requirement<br>
+        </p>
+        <img src="images/Fitment use case.png" class="use-case-pic" style="display: block;
+             margin-left: auto; margin-right: auto; width: 50%; align-items: center;">
+            <p style="text-align: center;">Figure: Use case diagram for fitment.</p>
+    </div>
+    <h3 id="fr1">4.1 Functional Requirement 1</h2>
+      <p><b>4.1.1 Functional requirement 1.1</b><br>
+        <b>ID: FRP1</b><br>
+        <div class="row">
+  
+  <div class="coloumn">
+    <img src="images/signupweb.png" alt="Forest" style="width:80%">
+  </div>
+  <div class="column">
+    <img src="images/signup page.png" alt="Mountains" style="width:30%">
+  </div>
+
+</div>
+  <p style="text-align: center;">Figure:Mock up for User Registration</p>
+        TITLE: User Registration<br>
+        ACTOR: User<br>
+        PURPOSE: Register the user information<br>
+        OVERVIEW: Given that a user has downloaded the mobile application, or accessed the website then the user should be able to register into the system. The user must provide Name, Password, Address, Phone Number, address and user type. User type consist of ‘buyer’ and ‘seller’.<br>
+        TYPE: Primary function<br>
+        PRIORITY: High<br>
+        DEP: none<br>
+        
+
+  <div class="table">
+  	<h4>Actions:</h4>
+<table id="t01">
+  <tr>
+    <th>Actor Actions</th>
+    <th>System Responses</th> 
+   
+  </tr>
+  <tr>
+    <td>1.Actor enters his/her Id and Password.</td>
+    <td>2.The system validates the entered Id and password.</td>
+    
+   
+  </tr>
+  <tr>
+     <td>3.Actor selects the option to register.</td>
+    
+    <td>4.The system takes the user to the expected sign-in or sign-up page.</td>
+   
+  </tr>
+  <tr> 
+  	<td>5.The actor register with the federated id by pressing the logo.</td>
+
+     <td>6.System fetches the registration information from the device.</td>
+
+  </tr>
+  
+</table>
+
+<p style="text-align: center;">Figure:Typical Events</p>
+   </div> 
+   <div class="table">
+   	<h4>Alternate Actions:</h4>
+   	<table id="t01">
+  <tr>
+    <th>Problems</th>
+    <th>Actions</th> 
+   
+  </tr>
+  <tr>
+    <td>Actor fails to enter the correct information for login.</td>
+    <td>System will display invalid id and password.</td>
+    
+   
+  </tr>
+  <tr>
+     <td>Actor decides to continue without registration</td>
+    
+    <td>The system takes the user to the homepage.</td>
+   
+  </tr>
+  <tr> 
+  	<td>Actor don't have an account.</td>
+
+     <td>System will ask actor to signup.</td>
+
+  </tr>
+  
+</table>
+   	<p style="text-align: center;">Figure:Alternate Actions</p>
+   </div> 
+   
+   <div class="table">
+   	<h4>Functional Requirement:</h4>
+   	<table id="t01">
+  <tr>
+    <th>Requirement Code</th>
+    <th>Detailss</th> 
+   
+  </tr>
+  <tr>
+    <td>Requirement-1</td>
+    <td>Register user in short time.</td>
+    
+   
+  </tr>
+  <tr>
+     <td>Requirement-2</td>
+    
+    <td>Enable user to change Id and Password.</td>
+   
+  </tr>
+ 
+  
+</table>
+   	<p style="text-align: center;">Figure:Functional Requirement</p>
+   </div>   
+        <b>4.1.2 Functional requirement 1.2</b><br>
+        <b>ID: FRP2</b><br>
+         <img src="images/login.png" class="use-case-pic" style="display: block;
+             margin-left: auto; margin-right: auto; width: 50%; align-items: center;">
+            <p style="text-align: center;">Figure: Mockup for login.</p>
+        TITLE: User Login<br>
+        ACTOR: User<br>
+        PURPOSE: Login the user<br>
+        OVERVIEW: Given that the user is already registered, the user will be able to login by providing the email and password.<br>
+        TYPE: Primary function<br>
+        PRIORITY: High<br>
+        DEP: FRP1<br>
+        
+  <div class="table">
+   	<h4>Actor Actions:</h4>
+   	<table id="t01">
+  <tr>
+    <th>Actor Actions</th>
+    <th>System Responses</th> 
+   
+  </tr>
+  <tr>
+    <td>1.Actor is not registered yet.</td>
+    <td>2.Select “Already Registered” button from the registration page.</td> 
+  </tr>
+  
+   <tr>
+    <td>3.Enter email and password.</td>
+    <td>4.Click on login.</td> 
+  </tr>
+  
+ 
+  
+</table>
+   	<p style="text-align: center;">Figure:Typical course of events</p>
+   </div> 
+    <div class="table">
+   	<h4>Alternate Actions:</h4>
+   	<table id="t01">
+  <tr>
+    <th>Problems</th>
+    <th>Actions</th> 
+   
+  </tr>
+  <tr>
+    <td>1.Email not exist.</td>
+    <td>2.Show error: “This email is not registered yet. Please Register first.”.</td>
+  </tr>
+   <tr>
+    <td>3.Password does not match: “Password or email is not correct. Please retry!”.</td>
+    <td>4.Any field left blank, show error: “All the fields must be filled up”. </td>
+  </tr>
+  
+  
+</table>
+   	<p style="text-align: center;">Figure:Alternate Actions</p>
+   </div>  
+          <div class="table">
+   	<h4>Functional Requirement:</h4>
+   	<table id="t01">
+  <tr>
+    <th>Requirement Code</th>
+    <th>Details</th> 
+   
+  </tr>
+  
+  <tr>
+     <td>Requirement-1</td>
+    
+    <td>Registration required to login.</td>
+   
+  </tr>
+ 
+  
+</table>
+   	<p style="text-align: center;">Figure:Functional Requirement</p>
+   </div>
+        
+        <b>4.1.3 Functional requirement 1.3</b><br>
+        <b>ID: FRP3</b><br>
+        <img src="images/search.png" class="use-case-pic" style="display: block;
+             margin-left: auto; margin-right: auto; width: 15%; align-items: center;">
+            <p style="text-align: center;">Figure: Mockup of search.</p>
+        TITLE: Search<br>
+        ACTOR: User - buyer<br>
+        PURPOSE: Search for product<br>
+        OVERVIEW: From the home page the user must be able to search for their preferred product. The search will find the match the title of the product.<br>
+        TYPE: Primary function<br>
+        PRIORITY: Medium<br>
+        DEP: FRP2<br>
+        COURSE OF EVENTS: <br>
+          I) Type the search keywords<br>
+          III) Click on search<br>
+        ALTERNATIVE COURSE OF EVENTS:<br>
+        I) Search keywords are empty, show error: “Please enter a keyword”<br><br>
+        <div class="table">
+   	<h4>Actor Actions:</h4>
+   	<table id="t01">
+  <tr>
+    <th>Actor Actions</th>
+    <th>System Responses</th> 
+   
+  </tr>
+  <tr>
+    <td>1.Type the search keywords.</td>
+    <td>2.Click on search.</td> 
+  </tr>
+  
+ </table>
+   	<p style="text-align: center;">Figure:Typical course of events</p>
+   </div> 
+    <div class="table">
+   	<h4>Alternate Actions:</h4>
+   	<table id="t01">
+  <tr>
+    <th>Problems</th>
+    <th>Actions</th> 
+   
+  </tr>
+  <tr>
+    <td>1.Search keywords are empty.</td>
+    <td>2.Show error: “Please enter a keyword”.</td>
+  </tr>
+   
+</table>
+   	<p style="text-align: center;">Figure:Alternate Actions</p>
+   </div>  
+       
+
+        <b>4.1.4 Functional requirement 1.4</b><br>
+        <b>ID: FRP4</b><br>
+        TITLE: Order Product<br>
+        ACTOR: User - buyer<br>
+        PURPOSE: Order the product<br>
+        OVERVIEW: From the product page a user will be able to click on place order. The order will be placed assuming that the payment type will be pay on delivery and address will be the address of the user.<br>
+        TYPE: Primary function<br>
+        PRIORITY: High<br>
+        DEP: FRP2<br>
+        COURSE OF EVENTS: <br>
+          I) Click on Order Product<br>
+        ALTERNATIVE COURSE OF EVENTS:<br>
+          I) Address must be valid, Admins will check for the validity of the address and manually send SMS to the user regarding the issue.<br><br>
+        
+        <b>4.1.5 Functional requirement 1.5</b><br>
+        <b>ID: FRP5</b><br>
+        TITLE: Rate Product<br>
+        ACTOR: User - buyer<br>
+        PURPOSE: Rate and Review previously bought products<br>
+        OVERVIEW:  From the Product page the user can click on “Review product” button. This will pop up a window with 5 empty stars and a comment box. The user will have to click on any star which will signify the rating based on one’s index of the star. The user can additionally add a review comment into the box and submit the rating.<br>
+        TYPE: Primary function<br>
+        PRIORITY: Low<br>
+        DEP: FRP2<br>
+        COURSE OF EVENTS: <br>
+          I) Select a star<br>
+          II) Optionally type a comment<br>
+          III) Click on submit<br>
+        ALTERNATIVE COURSE OF EVENTS:<br>
+          I) No stars selected, show error: “You must rate the product from 1-5”<br><br>
+        
+        <b>4.1.6 Functional requirement 1.6</b><br>
+        <b>ID: FRP6</b><br>
+        <img src="images/augment.jpg" class="use-case-pic" style="display: block;
+             margin-left: auto; margin-right: auto; width: 20%; align-items: center;">
+            <p style="text-align: center;">Figure: Augmented Reality Product View.</p>
+        TITLE: See AR of the product – Mobile Application only<br>
+        ACTOR: User - buyer<br>
+        PURPOSE: See the product in real time with the camera of the mobile app.<br>
+        OVERVIEW:  From the Product page the buyer can select the view in AR button. This bring to Product AR page, where the 3D version of the product will be placed on a plane found in the camera. User will be able to move or rotate the product. The product will stay still in perspective of the surface and must not move significantly with the motion of the camera.<br>
+        TYPE: Primary function<br>
+        PRIORITY: High<br>
+        DEP: FRP8<br>
+        <div class="table">
+   	<h4>Actor Actions:</h4>
+   	<table id="t01">
+  <tr>
+    <th>Actor Actions</th>
+    <th>System Responses</th> 
+   
+  </tr>
+  <tr>
+    <td>Select a product from home page</td>
+    <td>Click on view product in AR</td>
+    
+   
+  </tr>
+  <tr>
+     <td>Place the product on a surface seen with the camera</td>
+    
+    <td>Optionally move the product</td>
+   
+  </tr>
+   <tr>
+     <td>Actors tap multiple times to place the object in several places.</td>
+    
+    <td>Exit from the view</td>
+   
+  </tr>
+ 
+ 
+  
+</table>
+   	<p style="text-align: center;">Figure:Typical course of events</p>
+   </div>  
+      <div class="table">
+   	<h4>Alternate Actions:</h4>
+   	<table id="t01">
+  <tr>
+    <th>Problems</th>
+    <th>Actions</th> 
+   
+  </tr>
+  <tr>
+    <td>Surface not found, show error: “The environment is too complex to find a surface”</td>
+    <td>Wait till environment changes, before showing the 3D product</td>
+    
+   
+  </tr>
+    <tr>
+    <td>Not enough light, show error: “The environment doesn’t have enough light to find a surface"</td>
+    <td>Wait till environment changes, before showing the 3D product</td>
+    
+   
+  </tr>
+  
+  
+</table>
+   	<p style="text-align: center;">Figure:Alternate Actions</p>
+   </div> 
+        <div class="table">
+   	<h4>Functional Requirement:</h4>
+   	<table id="t01">
+  <tr>
+    <th>Requirement Code</th>
+    <th>Details</th> 
+   
+  </tr>
+  <tr>
+    <td>Requirement-1</td>
+    <td>Detecting surface in short time.</td>
+    
+   
+  </tr>
+  <tr>
+     <td>Requirement-2</td>
+    
+    <td>Working integrated camera.</td>
+   
+  </tr>
+ 
+  
+</table>
+   	<p style="text-align: center;">Figure:Functional Requirement</p>
+   </div>   
+        <b>4.1.7 Functional requirement 1.7</b><br>
+        <b>ID: FRP7</b><br>
+        TITLE: Profile Page<br>
+        ACTOR: User<br>
+        PURPOSE: View the profile page<br>
+        OVERVIEW:  Show the user information to the user. This information will include, name, email, phone number, address and user type. User will be able to modify any of this information except for the mail. <br>
+        TYPE: Primary function<br>
+        PRIORITY: Low<br>
+        DEP: FRP2<br>
+        
+         <div class="table">
+   	<h4>Actor Actions:</h4>
+   	<table id="t01">
+  <tr>
+    <th>Actor Actions</th>
+    <th>System Responses</th> 
+   
+  </tr>
+  <tr>
+    <td>Select Profile button from home</td>
+    <td>Select any field</td>
+    
+   
+  </tr>
+  
+   <tr>
+     <td>Modify the selected field.</td>
+    
+    <td>Click on update information</td>
+   
+  </tr>
+ 
+ 
+  
+</table>
+   	<p style="text-align: center;">Figure:Typical course of events</p>
+   </div> 
+    <div class="table">
+   	<h4>Alternate Actions:</h4>
+   	<table id="t01">
+  <tr>
+    <th>Problems</th>
+    <th>Actions</th> 
+   
+  </tr>
+  <tr>
+    <td> Data not downloaded properly, show error: “Couldn’t connect to server, please check your internet connection and try again later!”</td>
+    <td>Wait till environment changes, before showing the 3D product</td>
+    
+   
+  </tr>
+  
+  
+</table>
+   	<p style="text-align: center;">Figure:Alternate Actions</p>
+   </div>  
+          <div class="table">
+   	<h4>Functional Requirement:</h4>
+   	<table id="t01">
+  <tr>
+    <th>Requirement Code</th>
+    <th>Details</th> 
+   
+  </tr>
+  
+  <tr>
+     <td>Requirement-1</td>
+    
+    <td>Click the profile to edit profile.</td>
+   
+  </tr>
+ 
+  
+</table>
+   	<p style="text-align: center;">Figure:Functional Requirement</p>
+   </div>   
+       
+          
+        <b>4.1.8 Functional requirement 1.8	</b><br>
+        <b>ID: FRP8</b><br>
+        <img src="images/product page.png" class="use-case-pic" style="display: block;
+             margin-left: auto; margin-right: auto; width: 20%; align-items: center;">
+            <p style="text-align: center;">Figure: Products.</p>
+        TITLE: Product Page<br>
+        ACTOR: User<br>
+        PURPOSE: View the Product page<br>
+        OVERVIEW:  Product page can be accessed from various other views. It is assumed that this page is accessed by clicking on a product. The information regarding that product will then be shown here. User can view the details of a product from this view.<br>
+        TYPE: Primary function<br>
+        PRIORITY: High<br>
+        DEP: none<br>
+        
+      
+   <div class="table">
+   	<h4>Actor Actions:</h4>
+   	<table id="t01">
+  <tr>
+    <th>Actor Actions</th>
+    <th>System Responses</th> 
+   
+  </tr>
+  <tr>
+    <td>Select a product</td>
+    <td>Select any functionality provided by the product page</td>
+    
+   
+  </tr>
+  
+   
+ 
+  
+</table>
+   	<p style="text-align: center;">Figure:Typical course of events</p>
+   </div> 
+    <div class="table">
+   	<h4>Alternate Actions:</h4>
+   	<table id="t01">
+  <tr>
+    <th>Problems</th>
+    <th>Actions</th> 
+   
+  </tr>
+  <tr>
+    <td> Product details not downloaded in time limit of 30 seconds, show error: “Couldn’t connect to server, please check your internet connection and try again later!”</td>
+    <td>Appear retry button</td>
+    
+   
+  </tr>
+  
+  
+</table>
+   	<p style="text-align: center;">Figure:Alternate Actions</p>
+   </div>  
+          <div class="table">
+   	<h4>Functional Requirement:</h4>
+   	<table id="t01">
+  <tr>
+    <th>Requirement Code</th>
+    <th>Details</th> 
+   
+  </tr>
+  
+  <tr>
+     <td>Requirement-1</td>
+    
+    <td>Show all types of products.</td>
+   
+  </tr>
+ 
+  
+</table>
+   	<p style="text-align: center;">Figure:Functional Requirement</p>
+   </div>   
+        
+        <b>4.1.9 Functional requirement 1.9	</b><br>
+        <b>ID: FRP9</b><br>
+        TITLE: Administrator Login<br>
+        ACTOR: Admin<br>
+        PURPOSE: Login the admin<br>
+        OVERVIEW:  Given that the admin is already registered the admin will be able to login in trough a web portal.<br>
+        TYPE: Primary function<br>
+        PRIORITY: High<br>
+        DEP: none<br>
+        
+       
+
+   <div class="table">
+   	<h4>Actor Actions:</h4>
+   	<table id="t01">
+  <tr>
+    <th>Actor Actions</th>
+    <th>System Responses</th> 
+   
+  </tr>
+  <tr>
+    <td>1.Enter email/username and password</td>
+    <td>2.Click on login</td>
+    
+   
+  </tr>
+  
+   
+ 
+  
+</table>
+   	<p style="text-align: center;">Figure:Typical course of events</p>
+   </div> 
+    <div class="table">
+   	<h4>Alternate Actions:</h4>
+   	<table id="t01">
+  <tr>
+    <th>Problems</th>
+    <th>Actions</th> 
+   
+  </tr>
+  <tr>
+    <td>1.Email not exist, show error: “This email/user is not registered yet. Please Register first.”</td>
+    <td>2.Password does not match: “Password or email is not correct. Please retry!”</td>
+    
+   
+  </tr>
+  
+  
+</table>
+   	<p style="text-align: center;">Figure:Alternate Actions</p>
+   </div>  
+          <div class="table">
+   	<h4>Functional Requirement:</h4>
+   	<table id="t01">
+  <tr>
+    <th>Requirement Code</th>
+    <th>Details</th> 
+   
+  </tr>
+  
+  <tr>
+     <td>Requirement-1</td>
+    
+    <td>Any field left blank, show error: “All the fields must be filled up”.</td>
+   
+  </tr>
+ 
+  
+</table>
+   	<p style="text-align: center;">Figure:Functional Requirement</p>
+   </div> 
+        
+        <b>4.1.10 Functional requirement 1.10	</b><br>
+        <b>ID: FRP10</b><br>
+        TITLE: Admin Dashboard<br>
+        ACTOR: Admin<br>
+        PURPOSE: View the admin dashboard<br>
+        OVERVIEW:  The admin dashboard will show sales overview, recent activity and latest orders.<br>
+        TYPE: Primary function<br>
+        PRIORITY: High<br>
+        DEP: FRP9<br>
+       
+        
+   <div class="table">
+   	<h4>Actor Actions:</h4>
+   	<table id="t01">
+  <tr>
+    <th>Actor Actions</th>
+    <th>System Responses</th> 
+   
+  </tr>
+  <tr>
+    <td>1.Change order status</td>
+    <td>2.View order details</td>
+    
+   
+  </tr>
+  
+   
+ 
+  
+</table>
+   	<p style="text-align: center;">Figure:Typical course of events</p>
+   </div> 
+    <div class="table">
+   	<h4>Alternate Actions:</h4>
+   	<table id="t01">
+  <tr>
+    <th>Problems</th>
+    <th>Actions</th> 
+   
+  </tr>
+  <tr>
+    <td>1.No order to show.</td>
+    <td>2.Go to cart to add product for order</td>
+    
+   
+  </tr>
+  
+  
+</table>
+   	<p style="text-align: center;">Figure:Alternate Actions</p>
+   </div>  
+          <div class="table">
+   	<h4>Functional Requirement:</h4>
+   	<table id="t01">
+  <tr>
+    <th>Requirement Code</th>
+    <th>Details</th> 
+   
+  </tr>
+  
+  <tr>
+     <td>Requirement-1</td>
+    
+    <td>Login first to order.</td>
+   
+  </tr>
+ 
+  
+</table>
+   	<p style="text-align: center;">Figure:Functional Requirement</p>
+   </div> 
+        
+        <b>4.1.11 Functional requirement 1.11</b><br>
+        <b>ID: FRP12</b><br>
+        TITLE: Product Menu<br>
+        ACTOR: Admin<br>
+        PURPOSE: Add new, remove or edit existing products<br>
+        OVERVIEW:  The admin will be able to create a new product. He or She will also be able to remove or edit existing products. Product’s 3D model file can be uploaded as well as 2D images of the product through this menu. <br>
+        TYPE: Primary function<br>
+        PRIORITY: High<br>
+        DEP: FRP9, FRP10, FRP11<br>
+       
+   
+        </p>
+         <div class="table">
+   	<h4>Actor Actions:</h4>
+   	<table id="t01">
+  <tr>
+    <th>Actor Actions</th>
+    <th>System Responses</th> 
+   
+  </tr>
+  <tr>
+    <td>1.Create a new Product</td>
+    <td>2.Edit existing Product</td> 
+  </tr>
+  
+   <tr>
+    <td>3.Add product description</td>
+    <td>4.Add 3D models or 2D images of the product</td> 
+  </tr>
+  
+ 
+  
+</table>
+   	<p style="text-align: center;">Figure:Typical course of events</p>
+   </div> 
+    <div class="table">
+   	<h4>Alternate Actions:</h4>
+   	<table id="t01">
+  <tr>
+    <th>Problems</th>
+    <th>Actions</th> 
+   
+  </tr>
+  <tr>
+    <td>1.No product to edit/delete.</td>
+    <td>2. Product capacity reached: “no more products can be added!”.</td>
+  </tr>
+   <tr>
+    <td>3.Invalid file uploaded for 3D models or 2D image: “Please upload a valid file!’.</td>
+    <td>4. File size too big: “File is too large to upload” </td>
+  </tr>
+  
+  
+</table>
+   	<p style="text-align: center;">Figure:Alternate Actions</p>
+   </div>  
+          <div class="table">
+   	<h4>Functional Requirement:</h4>
+   	<table id="t01">
+  <tr>
+    <th>Requirement Code</th>
+    <th>Details</th> 
+   
+  </tr>
+  
+  <tr>
+     <td>Requirement-1</td>
+    
+    <td>Show all available products.</td>
+   
+  </tr>
+ 
+  
+</table>
+   	<p style="text-align: center;">Figure:Functional Requirement</p>
+   </div>
+
+    <h3 id="fr2">4.2 Functional Requirement 2</h2>
+      <p><b>4.2.1 Functional requirement 2.1</b><br>
+        <b>ID: FRS1</b><br>
+        TITLE: Download mobile application<br>
+        ACTOR: User<br>
+        OVERVIEW: A user should be able to download the mobile application through either an application store or similar service on the mobile phone. The application should be free to download.<br>
+        PURPOSE: In order for a user to download the mobile application.<br>
+        TYPE: Secondary function<br>
+        Priority: High<br>
+        DEP: None<br>
+        COURSE OF EVENTS:<br>
+          I) Downloads the app from google play store<br><br>
+
+        
+        <b>4.2.2 Functional requirement 2.2</b><br>
+        <b>ID: FRS2</b><br>
+        TITLE: Check Password<br>
+        ACTOR: System<br>
+        RAT: Match the password<br>
+        DESC:  Match password entered by the user during login. The inserted password will be matched against the one stored in the database.<br>
+        TYPE: Secondary function<br>
+        PRIORITY: High<br>
+        DEP: FRS2<br>
+           <div class="table">
+   	<h4>Actor Actions:</h4>
+   	<table id="t01">
+  <tr>
+    <th>Actor Actions</th>
+    <th>System Responses</th> 
+   
+  </tr>
+  <tr>
+    <td>1. Get password from user</td>
+    <td>2.Get password from databases</td> 
+  </tr>
+  
+   <tr>
+    <td>3.Check the passwords.</td>
+    <td>4.Match if both the passwords are the same.</td> 
+  </tr>
+  
+ 
+  
+</table>
+   	<p style="text-align: center;">Figure:Typical course of events</p>
+   </div> 
+    <div class="table">
+   	<h4>Alternate Actions:</h4>
+   	<table id="t01">
+  <tr>
+    <th>Problems</th>
+    <th>Actions</th> 
+   
+  </tr>
+  <tr>
+    <td>1.Check if there is any error.</td>
+    <td>2.The errors will be handled by the view using this function.</td>
+  </tr>
+  
+  
+</table>
+   	<p style="text-align: center;">Figure:Alternate Actions</p>
+   </div>  
+          <div class="table">
+   	<h4>Functional Requirement:</h4>
+   	<table id="t01">
+  <tr>
+    <th>Requirement Code</th>
+    <th>Details</th> 
+   
+  </tr>
+  
+  <tr>
+     <td>Requirement-1</td>
+    
+    <td>Use hash function to secure the password.</td>
+   
+  </tr>
+ 
+  
+</table>
+   	<p style="text-align: center;">Figure:Functional Requirement</p>
+   </div>
+        
+        <b>4.2.3 Functional requirement 2.3</b><br>
+        <b>ID: FRS3</b><br>
+        TITLE: Get 3D model<br>
+        ACTOR: System<br>
+        PURPOSE: Get the 3d model of a specified product from the database<br>
+        OVERVIEW:  Search for the product id and find the 3D model from the database<br>
+        TYPE: Secondary function<br>
+        PRIORITY: High<br>
+        DEP: none<br>
+        
+   <div class="table">
+   	<h4>Actor Actions:</h4>
+   	<table id="t01">
+  <tr>
+    <th>Actor Actions</th>
+    <th>System Responses</th> 
+   
+  </tr>
+  <tr>
+    <td>1. Get product ID</td>
+    <td>2.Search the product by its id in the database</td> 
+  </tr>
+  
+   <tr>
+    <td>3.Find the 3D model.</td>
+    <td>4. Download the 3D model.</td> 
+  </tr>
+  
+ 
+  
+</table>
+   	<p style="text-align: center;">Figure:Typical course of events</p>
+   </div> 
+    <div class="table">
+   	<h4>Alternate Actions:</h4>
+   	<table id="t01">
+  <tr>
+    <th>Problems</th>
+    <th>Actions</th> 
+   
+  </tr>
+  <tr>
+    <td>1.Internet Connection Problem,</td>
+    <td>2.Show error “Couldn’t download the 3D model, please try again later”
+            Appear retry button </td>
+  </tr>
+  
+  
+</table>
+   	<p style="text-align: center;">Figure:Alternate Actions</p>
+   </div>  
+          <div class="table">
+   	<h4>Functional Requirement:</h4>
+   	<table id="t01">
+  <tr>
+    <th>Requirement Code</th>
+    <th>Details</th> 
+   
+  </tr>
+  
+ 
+  
+</table>
+   	<p style="text-align: center;">Figure:Functional Requirement</p>
+   </div>
+        <b>4.2.4 Functional requirement 2.4</b><br>
+        <b>ID: FRS4</b><br>
+        TITLE: Check if User is logged in<br>
+        ACTOR: System<br>
+        PURPOSE: Check if user is already logged in<br>
+        OVERVIEW: The system may need to check if the user is properly logged in in different scenarios. The login state may be cached in the running device.<br>
+        TYPE: Secondary function<br>
+        PRIORITY: High<br>
+        DEP: FRS2<br>
+        COURSE OF EVENTS: <br>
+          I)  Get user login status from device<br>
+        ALTERNATIVE COURSE OF EVENTS:<br>
+          II) Couldn’t access device storage, show error “Couldn’t access device memory. Check the permissions for this app”<br>
+        </p>
+
+  
+
+        <h2 id="nonFunctional">5. Other Nonfunctional Requirements</h2>
+        
+        <h3 id="performance">5.1 Performance Requirements</h2>
+          <p>The requirements in this section provide a detailed specification of the user interaction with the software and measurements placed on the system performance.<br><br>
+
+
+            <b>5.1.1 Prominent search feature</b><br>
+            <b>ID: FRN1</b><br>
+            TITLE: Prominent search feature<br>
+            OVERVIEW: The search feature should be prominent and easy to find for the user.<br>
+            PURPOSE: In order to find the search feature easily for a user.<br>
+            DEP: none<br><br>
+            
+            <b>5.1.2 Usage of the search feature</b><br>
+            <b>ID: FRN2</b><br>
+            TITLE: Usage of the search feature<br>
+            OVERVIEW: The different search options should be evident, simple and easy to understand.<br>
+            PURPOSE: In order to perform a search easily for a user.<br>
+            DEP: none<br><br>
+            
+            <b>5.1.3 Usage of the result in the list view</b><br>
+            <b>ID: FRN3</b><br>
+            TITLE: Usage of the result in the list view<br>
+            OVERVIEW: The results displayed in the list view should be user friendly and easy to understand. Selecting an element in the result list should only take one click.<br>
+            PURPOSE: In order to use the list view easily for a user.<br>
+            DEP: none<br><br>
+            
+            <b>5.1.4 Usage of the Camera</b><br>
+            <b>ID: FRN4</b><br>
+            TITLE: Usage of the camera in AR mode<br>
+            OVERVIEW: The camera should be simplistic in nature, it should one or two buttons at max. <br>
+            PURPOSE: In order to see the surroundings for a user without any blockage. <br>
+            DEP: none<br><br>
+            
+            <b>5.1.5 Response time</b><br>
+            <b>ID: FRN5</b><br>
+            TAG: ResponseTime<br>
+            GIST: The fastness of the search<br>
+            SCALE: The response time of a search<br>
+            METER: Measurements obtained from 1000 searches during testing.<br>
+            MUST: No more than 2 seconds 100% of the time.<br>
+            WISH: No more than 1 second 100% of the time.<br><br>
+            
+            <b>5.1.6 System dependability</b><br>
+            <b>ID: FRN6</b><br>
+            TAG: SystemDependability<br>
+            GIST: The fault tolerance of the system.<br>
+            SCALE: If the system loses the connection to the Internet or missing any sensor, the user should be informed.<br>
+            METER: Measurements obtained from 1000 hours of usage during testing.<br>
+            MUST: 100% of the time.<br><br>
+            </p>
+      
+      <h3 id="safety">5.2 Safety Requirements</h2>
+          <p>In order to ensure the users safety, we must keep the personal information, the profile of a user,users passwords etc secured and not prone to online theft.User can rely on our website and app and they are free to purchase things safely. We will create secured traffic and data protection which will ensure a smooth business operation.  <br><br>
+
+        <h3 id="security">5.3 Security Requirements</h2>
+          <p><b>5.3.1 Communication Security</b><br>
+            <b>ID: FRN7</b><br>
+            TAG: CommunicationSecurity<br>
+            GIST: Security of the communication between the system and server.<br>
+            SCALE: The messages should be encrypted for log-in communications, so others cannot get user-name and password from those messages.<br>
+            METER: Attempts to get user-name and password through obtained messages on 1000 log-in session during testing.<br>
+            MUST: 100% of the Communication Messages in the communication of a log-in session should be encrypted.<br>
+            Communication Messages: Defined: Every exchanged of information between client and server.<br><br>
+            
+            <b>5.3.2 Admin Login Security</b><br>
+            <b>ID: FRN8</b><br>
+            TAG: AdminLoginAccountSecurity<br>
+            GIST: Security of accounts.<br>
+            SCALE: If an admin tries to log in to the web portal with a non-existing account then the admin should not be logged in. The admin should be notified about log-in failure.<br>
+            METER: 1000 attempts to log-in with a non-existing user account during testing.<br>
+            MUST: 100% of the time.<br><br>
+            
+            <b>5.3.3 Admin Account Security</b><br>
+            <b>ID: FRN9</b><br>
+            TAG: AdminAccountSecurity<br>
+            GIST: Security of admin accounts.<br>
+            SCALE: An admin and IP address should not be able to log-in to the web portal for a certain time period after three times of failed log-in attempts.<br>
+            METER: 1000 attempts to log-in during the lock period after user account has been locked because of failed log-in attempts of three times.<br>
+            MUST: The locking period should be half an hour, and during that period the log-in function is disabled.<br><br>
+            
+            <b>5.3.4 User Account Security</b><br>
+            <b>ID: FRN10</b><br>
+            TAG: UserCreateAccountSecurity<br>
+            GIST: The security of creating account for users of the system.<br>
+            SCALE: If a user wants to create an account and the desired user name is occupied, the user should be asked to choose a different user name.<br>
+            METER: Measurements obtained on 1000 hours of usage during testing.<br>
+            MUST: 100% of the time.<br><br>
+            </p>
+
+        <h3 id="quality">5.4 Software Quality Attributes</h2>
+          <p>The requirements in this section specify the required reliability, availability, and maintainability of the software system.<br><br>
+
+            <b>5.4.1 Reliability</b><br>
+            <b>ID: FRN11</b><br>
+            TAG: SystemReliability<br>
+            GIST: The reliability of the system.<br>
+            SCALE: The reliability that the system gives the right result on a search.<br>
+            METER: Measurements obtained from 1000 searches during testing.<br>
+            MUST: More than 98% of the searches.<br>
+            PLAN: More than 99% of the searches.<br>
+            WISH: 100% of the searches.<br><br>
+            
+            <b>5.4.2 Availability</b><br>
+            <b>ID: FRN12</b><br>
+            TAG: SystemAvailability<br>
+            GIST: The availability of the system when it is used.<br>
+            SCALE: The average system availability (not considering network failing).<br>
+            METER: Measurements obtained from 1000 hours of usage during testing.<br>
+            MUST: More than 98% of the time.<br>
+            PLAN: More than 99% of the time.<br>
+            WISH: 100% of the time.<br><br>
+            
+            <b>ID: FRN13</b><br>
+            <b>TITLE: Internet Connection</b><br>
+            OVERVIEW: The application should be connected to the Internet.<br>
+            PURPOSE: In order for the application to communicate with the database.<br>
+            DEP: none<br><br>
+            
+            <b>5.4.3 Maintainability</b><br>
+            <b>ID: FRN14</b><br>
+            TITLE: Application extendibility<br>
+            OVERVIEW: The application should be easy to extend. The code should be written in a way that it favors implementation of new functions.<br>
+            PURPOSE: In order for future functions to be implemented easily to the application.<br>
+            DEP: none<br><br>
+            
+            <b>ID: FRN15</b><br>
+            TITLE: Application testability<br>
+            OVERVIEW: Test environments should be built for the application to allow testing of the application’s different functions.<br>
+            PURPOSE: In order to test the application.<br>
+            DEP: none<br><br>
+            
+            <b>5.4.4 Portability</b><br>
+            <b>ID: FRN16</b><br>
+            TITLE: Application portability<br>
+            OVERVIEW: The application should be portable with Android.<br>
+            PURPOSE: The adaptable platform for the application to run on.<br>
+            DEP: none<br><br>
+            </p>
+
+        <h3 id="business">5.5 Business Rules</h2>
+          <p>Sales of illegal products and non-furniture products are not allowed. Administrator can view all user information obtained from user registration.</p>
+
+
+        <h2 id="other">6. Other Requirements</h2>
+          <p><i>Backup and Recovery:</i> Keep proper system wide backups and the backup cycle should be regular and frequent enough.</p>
+
+        <h2 id="appendixA">Appendix A: Glossary</h2>
+        <p>Definitions, acronyms, and abbreviations are listed below:<br>
+
+        <table border="1" cellspacing="0" cellpadding="1">
+          <tr>
+              <th>Term</th>
+              <th>Definition</th>
+          </tr>
+
+          <tr>
+            <td>User</td>
+            <td>Someone who interacts with the mobile phone application</td>
+          </tr>
+          <tr>
+            <td>Admin/Administrator</td>
+            <td>System administrator who is given specific permission for managing and controlling the system</td>
+          </tr>
+          <tr>
+            <td>Buyer</td>
+            <td>Someone who can see products and order it</td>
+          </tr>
+          <tr>
+            <td>Seller</td>
+            <td>Someone who gives full information about the product and deliver the product to the buyer</td>
+          </tr>
+          <tr>
+            <td>DEP</td>
+            <td>Dependency</td>
+          </tr>
+          <tr>
+            <td>PFR</td>
+            <td>Primary Functional Requirements</td>
+          </tr>
+          <tr>
+            <td>SFR</td>
+            <td>Secondary Functional Requirements</td>
+          </tr>
+          <tr>
+            <td>TAG</td>
+            <td>A unique, persistent identifier contained in a PLanguage statement [2]</td>
+          </tr>
+          <tr>
+            <td>GIST</td>
+            <td>A short description to help understanding [2]</td>
+          </tr>
+          <tr>
+            <td>SCALE</td>
+            <td>The scale of measurement used to quantify the statement [2]</td>
+          </tr>
+          <tr>
+            <td>METER</td>
+            <td>The process or device used to measure using the SCALE [2]</td>
+          </tr>
+          <tr>
+            <td>MUST</td>
+            <td>The minimum level required to avoid failure [2]</td>
+          </tr>
+          <tr>
+            <td>PLAN</td>
+            <td>The level at which success can be claimed [2]</td>
+          </tr>
+          <tr>
+            <td>WISH</td>
+            <td>A desirable level of achievement [2]</td>
+          </tr>
+        
+        </table>
+        </p>
+
+        <h2 id="appendixB">Appendix B: Analysis Models</h2>
+        <p>We plan to include class diagrams after the prototype is finished.</p>
+
+        <h2 id="appendixC">Appendix C: To Be Determined List</h2>
+        <p>Collect a numbered list of the TBD (to be determined) references that remain in the SRS so they can be tracked to closure.</Collect></p>
+
+        
+
+  </div>
+    
+</body>
+
+<script>/*Using JavaScript to make the website functional */
+  /* This function will be called by print button to print the whole HTML document*/
+  function printDoc() {
+  	document.getElementById("hd").style.paddingBottom = "300px"; 
+    /*document.getElementById("introduction").style.paddingTop = "280px";*/
+    document.getElementById("tableOfContent").style.display= "block"; /*Showing table of content */
+    document.getElementById("main").style.paddingTop = "50px";
+  	document.getElementById("main").style.paddingLeft = "50px";
+  	document.getElementById('mySidenav').style.display = "none";/*Hide the side navbar*/
+  	
+
+  window.print();
+}
+  /*To scroll to a given Element ID*/
+  function scrollToElement(elementId) {
+    document.getElementById(elementId).scrollIntoView({ 
+      behavior: 'smooth' 
+    });
+  }
+</script>
+
+</html>

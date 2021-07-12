@@ -1,0 +1,103 @@
+<!--
+load all static files
+-->
+{% load static from staticfiles %}
+<!doctype html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!--
+  load all static css files
+  -->
+  <link rel="stylesheet" href="{% static 'home.css' %}">
+  <link rel="stylesheet" href="{% static 'viewcart.css' %}">
+  <link rel="stylesheet" href="{% static 'cart.css' %}">
+  <!--
+  Font awesome library add
+  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!--
+  Bootstrap library add
+  -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <title></title>
+
+</head>
+<body>
+  <!--
+  navbar
+  -->
+  <nav class="navbar navbar-expand-sm bg-light navbar-light">
+  <!-- Brand -->
+  <a class="navbar-brand"><img src="{% static 'images/Project_logo.png' %}" alt="bg" style="width:70px;"></a>
+
+  <!-- Links -->
+
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'home' %}">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'products' %}">Products</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'viewCart' %}"><i class="fa fa-shopping-cart"></i>View Cart</a>
+    </li>
+    <!--
+    Here 'if' condition checks whether the user is log in or not.
+    If the user is login than it will show logout button otherwise login button
+    -->
+    {% if user %}
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'log' %}">Logout</a>
+    </li>
+    <!--
+    else check
+    -->
+    {% else %}
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'signin' %}"><i class="fa fa-user-plus"></i>Login</a>
+    </li>
+    {% endif %}
+    <!--
+    end IfElse
+    -->
+  </ul>
+  <!--
+This form is for searching products.
+  -->
+  <form class="form-inline ml-auto" id="topnav" method="post" action="{% url 'search' %}">
+    <!--
+  Sign Up button
+    -->
+      <a class="nav-link" href="{% url 'signup' %}">SignUp</a>
+      <!--
+    Administration login
+      -->
+      <a class="nav-link" href="{% url 'adminsignup' %}"> <i class="fa fa-drivers-license-o"></i>Administration</a>
+
+    {% csrf_token %}
+    <!--
+    CSRF tokens can prevent CSRF attacks by making it impossible for an attacker
+    to construct a fully valid HTTP request suitable for feeding to a victim user.
+    Since the attacker cannot determine or predict the value of a user's CSRF token, they cannot
+    construct a request with all the parameters that are necessary for the application to honor the request.
+  -->
+    <input class="form-control mr-sm-2" type="text" name="search" placeholder="Search">
+    <button class="btn btn-primary" type="submit">Search</button>
+  </form>
+</nav>
+<!--
+block is used for overriding specific parts of a template.
+
+-->
+  {% block content %}
+  {% endblock %}
+<br>
+</body>
+</html>

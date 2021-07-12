@@ -1,0 +1,59 @@
+<!--
+extend html from navbar
+-->
+{% extends "navbar.html" %}
+<!--
+All extends html file will be shown
+in this portion of html page.
+Navbar will be shown here
+-->
+{% block content %}
+<div class="container" id="pro">
+  <h1>List of Products</h1>
+  <hr class="new4">
+</div>
+
+<div class="container-fluid padding " id="productpd">
+  <div class="row padding">
+    <!--
+    prod is getting from the
+    context.This loop will traverse all the products of database
+    -->
+    {% for pro in prod %}
+    <div class="col-md-4">
+      <div class="card" style="width:300px"  >
+        <!--
+        image of particular product
+        -->
+      <img class="card-img-top" src="{{pro.val.image}}" alt="Card image" >
+      <div class="card-body">
+        <!--
+        Font aweome star icons
+        -->
+     <span class="fa fa-star checked"></span>
+     <span class="fa fa-star checked"></span>
+     <span class="fa fa-star checked"></span>
+     <span class="fa fa-star checked"></span>
+     <span class="fa fa-star checked"></span>
+     <!--
+    particular product name
+     -->
+      <h4 class="card-title">{{pro.val.pname2}}</h4>
+      <!--
+     particular product price
+      -->
+      <p class="price">Price: {{pro.val.price}} <i class="fa fa-money"></i></p>
+       <button type="button" class="btn btn-info"><a class="white" href="{% url 'detail' name=pro.val.pname %}">View Details</a></button>
+    </div>
+    </div>
+    </div>
+    {% endfor %}
+    <!--
+  end of for loop
+    -->
+  </div>
+</div>
+<!--
+End the body block
+-->
+{% endblock %}

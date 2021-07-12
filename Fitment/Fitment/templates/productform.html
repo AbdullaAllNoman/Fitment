@@ -1,0 +1,163 @@
+<!--
+load all static files
+-->
+{% load static from staticfiles %}
+<!doctype html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!--
+Add static css
+-->
+  <link rel="stylesheet" href="{% static 'proform.css' %}">
+  <!--
+Font awesome library add
+-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!--bootstrap libraries are added -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+
+<title>Create Products</title>
+
+</head>
+<body>
+  <!--Navbar of product form page -->
+<div class='container'>
+  <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+  <!--List of links -->
+  <ul class="navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link disabled" href="#">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link"  href="{% url 'vieworder' %}">Order</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link"  href="{% url 'productsform' %}">Upload Product</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link"  href="{% url 'log' %}">SignOut</a>
+    </li>
+  </ul>
+</nav>
+<div class="gap">
+  <h4>Upload Product Details</h4>
+</div>
+  <!--Form for uploading products -->
+  <form action="/productcreate/" method="post">
+    <!--
+    CSRF tokens can prevent CSRF attacks by making it impossible for an attacker
+    to construct a fully valid HTTP request suitable for feeding to a victim user.
+    Since the attacker cannot determine or predict the value of a user's CSRF token, they cannot
+    construct a request with all the parameters that are necessary for the application to honor the request.
+  -->
+    {% csrf_token %}
+    <!--
+    Form inputs
+  -->
+    Category:
+     <input type="text" name="category"><br><br>
+    Date:
+      <input type="text" name="date"><br><br>
+    Description:
+    <input type="text" name="description"><br><br>
+    Image Upload:
+    <!--
+    Image upload for storage here
+  -->
+   <input type="file" name="files[]" id="files"><br><br>
+    <input type="hidden" name="url" id="url"><br>
+    <button type="button" onclick="uploadimage()"> Upload</button><br>
+    Model3dURL:
+    <input type="text" name="modelurl"><br><br>
+    PID:
+    <input type="text" name="pid"><br><br>
+    Pname:
+      <input type="text" name="pname"><br><br>
+    Price:
+        <input type="text" name="price"><br><br>
+    Time:
+        <input type="text" name="time"><br><br>
+        <input type="submit" value="submit">
+
+  </form>
+
+</div>
+
+</body>
+<!-- <script src="https://www.gstatic.com/firebasejs/5.0.0/firebase.js"></script>-->
+<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-firestore.js"></script>
+  <!--
+  Add firebase database configuration
+-->
+<script>
+  var config = {
+    /*
+databse api,url and others are added here
+*/
+  apiKey: "AIzaSyBnHFYVViTRipbrF8nMbKBN43ONyEeyAMY",
+  authDomain: "fitment-c1432.firebaseapp.com",
+  databaseURL: "https://fitment-c1432.firebaseio.com",
+  projectId: "fitment-c1432",
+  storageBucket: "fitment-c1432.appspot.com",
+  messagingSenderId: "200152667905",
+  appId: "1:200152667905:web:0599b3810037e20c872d00",
+  measurementId: "G-HYEGZC7YE6"
+  };
+  /*
+Initialize the database
+*/
+
+  firebase.initializeApp(config);
+  /*
+Function for uploading iamge to storage.
+*/
+  function uploadimage(){
+      var storage = firebase.storage();
+      var file=document.getElementById('files').files[0];
+      var storageRef=storage.ref();
+      var thisref=storageRef.child('Product Images/file.name').put(file);
+      thisref.on('state_changed',function(snapshot){
+        console.log('file upload');
+      },
+      function (error){
+
+      },
+      function(){
+        thisref.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+        var x=document.getElementById('url');
+        x.value = downloadURL;
+        /*
+    url of upload image  is downloadURL.
+
+    */
+        console.log('File available at',downloadURL);
+
+    });
+    /*
+success message after getting the url in console
+*/
+        console.log('get url');
+
+        alert('file upload success');
+      });
+
+  }
+  /*
+end script
+*/
+</script>
+</html>

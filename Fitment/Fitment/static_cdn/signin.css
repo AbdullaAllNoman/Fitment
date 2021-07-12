@@ -1,0 +1,60 @@
+/* Set a style for the body,select font family */
+body {
+  font-family: Arial;
+}
+/* Set a style for select input */
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+/* Set a style when the input is submitted */
+input[type=submit] {
+  width: 100%;
+  background-color: aqua;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+/* Set a style when
+hover at submit button */
+input[type=submit]:hover {
+  background-color: lightblue;
+}
+/* Set a style for div container background color
+and padding */
+div.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 100px;
+}
+/* Set a style for the block class */
+.block {
+  display: block;
+  width: 100%;
+  border: none;
+  background-color:aqua ;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+/* this is used for padding */
+.gap{
+  padding-top: 150px;
+}
+/* text align center for header 1 */
+h1{
+  text-align: center;
+}
+/* Set a style for space class */
+.space{
+  padding-top: 50px;
+}
